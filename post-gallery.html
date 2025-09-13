@@ -36,162 +36,108 @@
     <link href="https://fonts.googleapis.com/css?family=Martel:200,300,400,600,700,800,900" rel="stylesheet">  
 
 </head>
+<style>
+    @media (max-width: 991px) {
+  /* ... (your existing mobile styles) ... */
+  
+  /* Flexbox for the entire menu to align items vertically */
+  .header-nav {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center everything horizontally */
+  }
 
+  /* Remove any conflicting margins from the navigation list */
+  .header-nav .navbar-nav {
+    margin: 0;
+  }
+  
+  /* Center the contact icons and give them a top margin for spacing */
+  .contact-icons {
+    justify-content: center;
+    margin-top: 20px;
+    gap: 30px; /* Increase gap for better touch targets */
+  }
+}
+</style>
 <body>
 
 	<div class="page-wraper"> 
        	
         <!-- HEADER START -->
-        <header class="site-header header-style-1  nav-wide  mobile-sider-drawer-menu">
-            <div class="sticky-header main-bar-wraper">
-                <div class="main-bar bg-white">
-                    <div class="container header-center">
-                        <div class="wt-header-left">
-                            <div class="logo-header">
-                                <div class="logo-header-inner logo-header-one">
-                                    <a href="index.html">
-                                        <img src="images/logo-dark.png" width="171" height="49" alt="" />
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="wt-header-center"> 
-                             <!-- NAV Toggle Button -->
-                            <button id="mobile-side-drawer" data-target=".header-nav" data-toggle="collapse" type="button" class="navbar-toggler collapsed">
-                                <span class="sr-only">Toggle navigation</span>
-                                <span class="icon-bar icon-bar-first"></span>
-                                <span class="icon-bar icon-bar-two"></span>
-                                <span class="icon-bar icon-bar-three"></span>
-                            </button>                       
-                            <!-- MAIN Vav -->
-                            <div class="header-nav navbar-collapse collapse nav-dark">
-                                <ul class=" nav navbar-nav nav-line-animation">
-                                    <li class="active">
-                                    	<a href="index.html">Home</a>
-                                        
-                                    </li>
-                                    <li>
-                                        <a href="about-1.html">About us</a>
-                                    </li>
-                                    <!-- <li>
-                                        <a href="javascript:;" >Blog</a>
-                                        <ul class="sub-menu">
-                                            <li><a href="news-grid.html">Grid</a></li>
-                                            <li><a href="news-listing.html">Listing</a></li>
-                                            <li><a href="news-masonry.html">Masonry</a></li>
-                                        </ul>
-                                    </li> -->
-                                    <li>
-                                        <a href="services.html" >We Provide</a>
-                                        
-                                    </li>
-                                    <li>
-                                        <a href="work-grid.html" >Gallery</a>
-                                                                       
-                                    </li>
-                                    <li>
-                                        <a href="contact-1.html">Contact us</a>
-                                    </li>                               
-                                </ul>
-                            </div>
-                        </div>
-                        <div class="wt-header-right ">
-                            <div class="site-bg-primary wt-header-right-child">
-                                <!-- ETRA Nav -->
-                                <div class="extra-nav">
-                                    <div class="extra-cell">
-                                        <a href="#search" class="site-search-btn"><i class="fa fa-search"></i></a>
-                                    </div>
-                                 </div>                                 
-                                <!-- ETRA Nav -->
-                                <div class="extra-nav">
-                                    <div class="extra-cell">
-                                        <div class="right-arrow-btn">
-                                            <button type="button" class="btn-open contact-slide-show text-white notification-animate"><i class="fa fa-angle-left"></i></button>
-                                        </div>                                         
-                                    </div>
-                                 </div>
-                             </div>                                 
-                       </div>  
-                        <!-- Contact Nav -->                            
-                        <div class="contact-slide-hide"> 
-                            <div class="contact-nav">
-                                 <a href="javascript:void(0)" class="contact_close">&times;</a>
-                                 <div class="contact-nav-form p-a30">
-                                    <form class="cons-contact-form" method="post" action="form-handler.php">
-                                        <div class="m-b30">
-                                            <!-- TITLE START -->
-                                            <div class="section-head text-left">
-                                                <h4 class="m-b5">Get In Touch</h4>
-                                            </div>
-                                            <!-- TITLE END --> 
-                                            <div class="input input-animate">
-                                                <label for="name">Name</label>
-                                                <input type="text" name="username"  id="name" required>
-                                                <span class="spin"></span>
-                                            </div>
-                                            <div class="input input-animate">
-                                                <label for="email">Email</label>
-                                                <input type="email" name="email"   id="email" required>
-                                                <span class="spin"></span>
-                                            </div>                                            
-                                            <div class="input input-animate">
-                                                <label for="message">Textarea</label>
-                                                <textarea name="message"  id="message" required></textarea>
-                                                <span class="spin"></span>
-                                            </div>
-                                            <div class="text-right">
-                                                <button name="submit" type="submit" value="Submit" class="btn-half site-button m-b15">
-                                                      <span>Submit</span>
-                                                </button>
-                                            </div>
-                                        </div>
-                                    </form>
-                                    <div class="contact-info text-black m-b30">
-                                        <!-- TITLE START -->
-                                        <div class="section-head text-left">
-                                            <h4 class="m-b5">Contact Info</h4>
-                                        </div>
-                                        <!-- TITLE END --> 
-                                        <div class="wt-icon-box-wraper left p-b40 icon-shake-outer">
-                                            <div class="icon-xs"><i class="flaticon-smartphone  icon-shake"></i></div>
-                                            <div class="icon-content">
-                                                <h5 class="m-t0 font-weight-500">Phone number</h5>
-                                                <p>(456) 789 10 12</p>
-                                            </div>
-                                        </div>
-                                        <div class="wt-icon-box-wraper left p-b40 icon-shake-outer">
-                                            <div class="icon-xs"><i class="flaticon-email  icon-shake"></i></div>
-                                            <div class="icon-content">
-                                                <h5 class="m-t0 font-weight-500">Email address</h5>
-                                                <p>demo@gmail.com</p>
-                                            </div>
-                                        </div>
-                                        <div class="wt-icon-box-wraper left icon-shake-outer">
-                                            <div class="icon-xs"><i class="flaticon-placeholder  icon-shake"></i></div>
-                                            <div class="icon-content">
-                                                <h5 class="m-t0 font-weight-500">Address info</h5>
-                                                <p>55/11 Land Street, Modern New Yourk City, USA</p>
-                                            </div>
-                                        </div>
-                                    </div>                                        
-                                 </div>
-                            </div> 
-                        </div>       
-                         <!-- Search popup -->
-                        <div id="search"> 
-                            <span class="close"></span>
-                            <form role="search" id="searchform" action="/search" method="get" class="radius-xl">
-                                <div class="input-group">
-                                    <input value="" name="q" type="search" placeholder="Type to search"/>
-                                    <span class="input-group-btn"><button type="button" class="search-btn"><i class="fa fa-search"></i></button></span>
-                                </div>   
-                            </form>
-                        </div>
-                    </div>
-                </div>
+    <header class="site-header header-style-1 nav-wide mobile-sider-drawer-menu">
+  <div class="sticky-header main-bar-wraper">
+    <div class="main-bar bg-white">
+      <div class="container header-center d-flex align-items-center justify-content-between">
+        <div class="wt-header-left">
+          <div class="logo-header">
+            <div class="logo-header-inner logo-header-one">
+              <a href="index.html">
+                <img
+                  src="images/logo-dark.png"
+                  width="171"
+                  height="49"
+                  alt=""
+                />
+              </a>
             </div>
-        </header>
+          </div>
+        </div>
+
+        <div class="wt-header-center flex-grow-1 text-center">
+          <button
+            id="mobile-side-drawer"
+            data-target=".header-nav"
+            data-toggle="collapse"
+            type="button"
+            class="navbar-toggler collapsed"
+          >
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar icon-bar-first"></span>
+            <span class="icon-bar icon-bar-two"></span>
+            <span class="icon-bar icon-bar-three"></span>
+          </button>
+          <div class="header-nav navbar-collapse collapse nav-dark d-flex justify-content-center">
+            <ul class="nav navbar-nav nav-line-animation">
+              <li>
+                <a href="index.html">Home</a>
+              </li>
+              <li>
+                <a href="about-1.html">About us</a>
+              </li>
+              <li>
+                <a href="services.html">We Provide</a>
+              </li>
+              <li class="active">
+                <a href="work-grid.html">Gallery</a>
+              </li>
+              <li>
+                <a href="contact-1.html">Contact us</a>
+              </li>
+            </ul>
+            <div class="contact-icons d-lg-none d-flex justify-content-center mt-3">
+              <a href="tel:+918451953292" class="contact-icon me-3" title="Call Now">
+                <i class="fa fa-phone"></i>
+              </a>
+              <a href="https://wa.me/917506183544" target="_blank" class="contact-icon" title="Chat on WhatsApp">
+                <i class="fa fa-whatsapp"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div class="contact-icons d-none d-lg-flex align-items-center">
+          <a href="tel:+918451953292" class="contact-icon me-3" title="Call Now">
+            <i class="fa fa-phone"></i>
+          </a>
+          <a href="https://wa.me/917506183544" target="_blank" class="contact-icon" title="Chat on WhatsApp">
+            <i class="fa fa-whatsapp"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
         <!-- HEADER END -->
         
         <!-- CONTENT START -->
@@ -572,12 +518,12 @@
                                     </ul>
                                 </div>
                                 <div class="footer-social-icon">
-                           			<ul class="social-icons f-social-link">
+                           			<!-- <ul class="social-icons f-social-link">
                                         <li><a href="javascript:void(0);" class="fa fa-google"></a></li>
                                         <li><a href="javascript:void(0);" class="fa fa-rss"></a></li>
                                         <li><a href="javascript:void(0);" class="fa fa-facebook"></a></li>
                                         <li><a href="javascript:void(0);" class="fa fa-twitter"></a></li>
-                                    </ul>
+                                    </ul> -->
                                 </div>
                             </div>
                         </div>
@@ -607,7 +553,7 @@
                 <div class="container">
                     <div class="row">
                         <div class="wt-footer-bot-center">
-                            <span class="copyrights-text">© 2024 Your Company. Designed By Thewebmax</span>
+                            <span class="copyrights-text">copyright © 2025 GSS furniture interior |Developed by Shree Krishna Digital Solution Pvt Ltd</span>
                         </div>
                     </div>
                 </div>

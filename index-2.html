@@ -35,7 +35,9 @@
     <!-- FLATICON STYLE SHEET -->
     <link rel="stylesheet" href="css/skin/skin-1.css" class="skin" />
     <!-- THEME COLOR CHANGE STYLE SHEET -->
-     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+     <!-- Font Awesome 6 -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta6fa8qWj/4AER1S8k7y846Nqj188uO+vK+Ww1X44T520A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
 
     <!-- REVOLUTION SLIDER CSS -->
     <link
@@ -64,195 +66,177 @@
 
 .testimonial-pic {
   display: flex;
-  justify-content: space-between; /* name left, stars right */
+  justify-content: space-between; 
   align-items: center;
   margin-top: 10px;
 }
 
 .rating i {
   color: gold;
-  margin-left: 2px; /* space between stars */
+  margin-left: 2px; 
 }
+
+
+.line-filter-outer {
+  background-size: cover;
+  background-position: center;
+  height: 350px; 
+  display: flex;
+  align-items: flex-end; 
+  justify-content: center;
+  position: relative;
+}
+
+
+.hover-effect-content {
+  color: #000000;
+  /* background: rgba(0, 0, 0, 0.65); */
+  padding: 15px;
+  border-radius: 6px;
+  max-width: 85%;   /* keep it narrower */
+  text-align: center;
+}
+
+/* Adjust heading inside box */
+.hover-effect-content h4 {
+  font-size: 16px;
+  font-weight: 600;
+}
+
+/* Responsive text */
+.project-text {
+  font-size: 13px;
+  line-height: 1.5;
+  margin: 0;
+}
+
+/* Tablet */
+@media (min-width: 768px) {
+  .line-filter-outer {
+    height: 400px;
+  }
+  .project-text {
+    font-size: 14px;
+  }
+}
+
+/* Desktop */
+@media (min-width: 1200px) {
+  .line-filter-outer {
+    height: 450px;
+  }
+  .project-text {
+    font-size: 15px;
+  }
+}
+
+@media (max-width: 991px) {
+  /* ... (your existing mobile styles) ... */
+  
+  /* Flexbox for the entire menu to align items vertically */
+  .header-nav {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center everything horizontally */
+  }
+
+  /* Remove any conflicting margins from the navigation list */
+  .header-nav .navbar-nav {
+    margin: 0;
+  }
+  
+  /* Center the contact icons and give them a top margin for spacing */
+  .contact-icons {
+    justify-content: center;
+    margin-top: 20px;
+    gap: 30px; /* Increase gap for better touch targets */
+  }
+}
+
+
 </style>
 
   <body>
     <div class="page-wraper">
       <!-- HEADER START -->
-      <header
-        class="site-header header-style-1 nav-wide mobile-sider-drawer-menu"
-      >
-        <div class="sticky-header main-bar-wraper">
-          <div class="main-bar bg-white">
-            <div class="container header-center">
-              <div class="wt-header-left">
-                <div class="logo-header">
-                  <div class="logo-header-inner logo-header-one">
-                    <a href="index.html">
-                      <img
-                        src="images/logo-dark.png"
-                        width="171"
-                        height="49"
-                        alt=""
-                      />
-                    </a>
-                  </div>
-                </div>
-              </div>
-              <div class="wt-header-center">
-                <!-- NAV Toggle Button -->
-                <button
-                  id="mobile-side-drawer"
-                  data-target=".header-nav"
-                  data-toggle="collapse"
-                  type="button"
-                  class="navbar-toggler collapsed"
-                >
-                  <span class="sr-only">Toggle navigation</span>
-                  <span class="icon-bar icon-bar-first"></span>
-                  <span class="icon-bar icon-bar-two"></span>
-                  <span class="icon-bar icon-bar-three"></span>
-                </button>
-                <!-- MAIN Vav -->
-               <div class="header-nav navbar-collapse collapse nav-dark d-flex justify-content-center">
-  <ul class="nav navbar-nav nav-line-animation">
-                    <li class="active">
-                      <a href="index.html">Home</a>
-                      <!-- <ul class="sub-menu">
-                                            <li><a href="index.html">Home 1</a></li>
-                                            <li><a href="index-2.html">Home 2</a></li>
-                                            <li><a href="index-3.html">Home 3</a></li>
-                                            <li><a href="index-4.html">Home 4</a></li>                                            
-                                        </ul> -->
-                    </li>
-                    <li>
-                      <a href="about-1.html">About us</a>
-                    </li>
-                    <!-- <li>
-                                        <a href="javascript:;" >Blog</a>
-                                        <ul class="sub-menu">
-                                            <li><a href="news-grid.html">Grid</a></li>
-                                            <li><a href="news-listing.html">Listing</a></li>
-                                            <li><a href="news-masonry.html">Masonry</a></li>
-                                        </ul>
-                                    </li> -->
-                    <li>
-                      <a href="services.html">We Provide</a>
-                      <!-- <ul class="sub-menu">
-                                            <li><a href="work-grid.html">Grid</a></li>
-                                            <li><a href="work-masonry.html">Masonry</a></li>
-                                            <li><a href="project-detail.html">Project Detail</a></li>                                        
-                                        </ul> -->
-                    </li>
-                    <li>
-                      <a href="work-grid.html">Gallery</a>
-                      <!-- <ul class="sub-menu">
-                                            <li><a href="work-grid.html">Gallery</a></li>
-                                            <li><a href="post-right-sidebar.html">Right Sidebar</a></li>                                        
-                                        </ul>                                     -->
-                    </li>
-                    <li>
-                      <a href="contact-1.html">Contact us</a>
-                    </li>
-                  </ul>
-                </div>
-              </div>
-              <!-- <div class="wt-header-right ">
-                            <div class="site-bg-primary wt-header-right-child"> -->
-              <!-- ETRA Nav -->
-              <!-- <div class="extra-nav">
-                                    <div class="extra-cell">
-                                        <a href="#search" class="site-search-btn"><i class="fa fa-search"></i></a>
-                                    </div>
-                                 </div>                                  -->
-              <!-- ETRA Nav -->
-              <!-- <div class="extra-nav">
-                                    <div class="extra-cell">
-                                        <div class="right-arrow-btn">
-                                            <button type="button" class="btn-open contact-slide-show text-white notification-animate"><i class="fa fa-angle-left"></i></button>
-                                        </div>                                         
-                                    </div>
-                                 </div>
-                             </div>                                 
-                       </div>   -->
-              <!-- Contact Nav -->
-              <!-- <div class="contact-slide-hide"> 
-                            <div class="contact-nav">
-                                 <a href="javascript:void(0)" class="contact_close">&times;</a>
-                                 <div class="contact-nav-form p-a30">
-                                    <form class="cons-contact-form" method="post" action="form-handler.php">
-                                        <div class="m-b30"> -->
-              <!-- TITLE START -->
-              <!-- <div class="section-head text-left">
-                                                <h4 class="m-b5">Get In Touch</h4>
-                                            </div> -->
-              <!-- TITLE END -->
-              <!-- <div class="input input-animate">
-                                                <label for="name">Name</label>
-                                                <input type="text" name="username"  id="name" required>
-                                                <span class="spin"></span>
-                                            </div> -->
-              <!-- <div class="input input-animate">
-                                                <label for="email">Email</label>
-                                                <input type="email" name="email"   id="email" required>
-                                                <span class="spin"></span>
-                                            </div>                                            
-                                            <div class="input input-animate">
-                                                <label for="message">Textarea</label>
-                                                <textarea name="message"  id="message" required></textarea>
-                                                <span class="spin"></span>
-                                            </div>
-                                            <div class="text-right">
-                                                <button name="submit" type="submit" value="Submit" class="btn-half site-button m-b15">
-                                                      <span>Submit</span>
-                                                </button>
-                                            </div>
-                                        </div>
-                                    </form>
-                                    <div class="contact-info text-black m-b30"> -->
-              <!-- TITLE START -->
-              <!-- <div class="section-head text-left">
-                                            <h4 class="m-b5">Contact Info</h4>
-                                        </div> -->
-              <!-- TITLE END -->
-              <!-- <div class="wt-icon-box-wraper left p-b40 icon-shake-outer">
-                                            <div class="icon-xs"><i class="flaticon-smartphone  icon-shake"></i></div>
-                                            <div class="icon-content">
-                                                <h5 class="m-t0 font-weight-500">Phone number</h5>
-                                                <p>(456) 789 10 12</p>
-                                            </div>
-                                        </div>
-                                        <div class="wt-icon-box-wraper left p-b40 icon-shake-outer">
-                                            <div class="icon-xs"><i class="flaticon-email  icon-shake"></i></div>
-                                            <div class="icon-content">
-                                                <h5 class="m-t0 font-weight-500">Email address</h5>
-                                                <p>demo@gmail.com</p>
-                                            </div>
-                                        </div>
-                                        <div class="wt-icon-box-wraper left icon-shake-outer">
-                                            <div class="icon-xs"><i class="flaticon-placeholder  icon-shake"></i></div>
-                                            <div class="icon-content">
-                                                <h5 class="m-t0 font-weight-500">Address info</h5>
-                                                <p>55/11 Land Street, Modern New Yourk City, USA</p>
-                                            </div>
-                                        </div>
-                                    </div>                                        
-                                 </div>
-                            </div> 
-                        </div>        -->
-              <!-- Search popup -->
-              <!-- <div id="search"> 
-                            <span class="close"></span>
-                            <form role="search" id="searchform" action="/search" method="get" class="radius-xl">
-                                <div class="input-group">
-                                    <input value="" name="q" type="search" placeholder="Type to search"/>
-                                    <span class="input-group-btn"><button type="button" class="search-btn"><i class="fa fa-search"></i></button></span>
-                                </div>   
-                            </form>
-                        </div> -->
+    <header class="site-header header-style-1 nav-wide mobile-sider-drawer-menu">
+  <div class="sticky-header main-bar-wraper">
+    <div class="main-bar bg-white">
+      <div class="container header-center d-flex align-items-center justify-content-between">
+        <div class="wt-header-left">
+          <div class="logo-header">
+            <div class="logo-header-inner logo-header-one">
+              <a href="index.html">
+                <img
+                  src="images/logo-dark.png"
+                  width="171"
+                  height="49"
+                  alt=""
+                />
+              </a>
             </div>
           </div>
         </div>
-      </header>
+
+        <div class="wt-header-center flex-grow-1 text-center">
+          <button
+            id="mobile-side-drawer"
+            data-target=".header-nav"
+            data-toggle="collapse"
+            type="button"
+            class="navbar-toggler collapsed"
+          >
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar icon-bar-first"></span>
+            <span class="icon-bar icon-bar-two"></span>
+            <span class="icon-bar icon-bar-three"></span>
+          </button>
+          <div class="header-nav navbar-collapse collapse nav-dark d-flex justify-content-center">
+            <ul class="nav navbar-nav nav-line-animation">
+              <li class="active">
+                <a href="index.html">Home</a>
+              </li>
+              <li>
+                <a href="about-1.html">About us</a>
+              </li>
+              <li>
+                <a href="services.html">We Provide</a>
+              </li>
+              <li>
+                <a href="work-grid.html">Gallery</a>
+              </li>
+              <li>
+                <a href="contact-1.html">Contact us</a>
+              </li>
+            </ul>
+            <div class="contact-icons d-lg-none d-flex justify-content-center mt-3">
+              <a href="tel:+918451953292" class="contact-icon me-3" title="Call Now">
+                <i class="fa fa-phone"></i>
+              </a>
+              <a href="https://wa.me/917506183544" target="_blank" class="contact-icon" title="Chat on WhatsApp">
+                <i class="fa fa-whatsapp"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div class="contact-icons d-none d-lg-flex align-items-center">
+          <a href="tel:+918451953292" class="contact-icon me-3" title="Call Now">
+            <i class="fa fa-phone"></i>
+          </a>
+          <a href="https://wa.me/917506183544" target="_blank" class="contact-icon" title="Chat on WhatsApp">
+            <i class="fa fa-whatsapp"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+
+
+
+
 
       <!-- HEADER END -->
 
@@ -283,7 +267,7 @@
        
         <!-- WELCOME  SECTION END -->
            <!-- WELCOME SECTION START -->
-            <div class="section-full p-t80 p-b50 bg-white">
+            <div class="section-full p-t80 p-b80 bg-white">
                 <div class="container">
                     <div class="section-content">
                     	<div class="row">
@@ -488,173 +472,129 @@
         </div>
         <!-- WHAT WE DO  SECTION END -->
 
-        <!-- PROJECT SECTION START -->
-        <div class="section-full p-t80 p-b20 bg-white">
-          <div class="container">
-            <!-- TITLE START -->
-            <div class="section-head text-center">
-              <div class="wt-separator-outer separator-center">
-                <div class="wt-separator">
-                  <span class="site-text-primary text-uppercase sep-line-one"
-                    >Recently finished</span
-                  >
-                </div>
-              </div>
-              <h2>Our latest projects</h2>
-            </div>
-            <!-- TITLE END -->
-          </div>
-          <!-- IMAGE CAROUSEL START -->
-          <div class="section-content">
-            <div
-              class="owl-carousel owl-carousel-filter3 owl-btn-bottom-center"
-            >
-              <!-- COLUMNS 1 -->
-              <div class="item">
-                <div
-                  class="line-filter-outer bg-cover"
-                  style="background-image: url(images/pro1.jpg)"
-                >
-                  <div class="hover-effect-1">
-                    <div class="hover-effect-content">
-                      <h4 class="m-t0 m-b25">
-                        Office Furniture
-                      </h4>
-                      <p>
-                       " Smart, ergonomic office furniture that improves productivity, enhances aesthetics, and creates a professional environment where teams feel inspired, focused, and motivated to perform efficiently. "
-                     </p>
-                      
-                    </div>
-                  </div>
-                </div>
-              </div>
+    <!-- PROJECT SECTION START -->
+<div class="section-full py-5 bg-white">
+  <div class="container">
+    <!-- TITLE START -->
+    <div class="section-head text-center mb-5">
+      <div class="wt-separator-outer separator-center mb-3">
+        <div class="wt-separator">
+          <span class="site-text-primary text-uppercase sep-line-one">
+            Recently finished
+          </span>
+        </div>
+      </div>
+      <h2 class="fw-bold">Our latest projects</h2>
+    </div>
+    <!-- TITLE END -->
 
-              <!-- COLUMNS 2 -->
-              <div class="item">
-                <div
-                  class="line-filter-outer bg-cover"
-                  style="background-image: url(images/pro2.jpg)"
-                >
-                  <div class="hover-effect-1">
-                    <div class="hover-effect-content">
-                      <h4 class="m-t0 m-b25">
-                        Studio Furniture
-                      </h4>
-                      <p>
-                        "
-                        Compact and creative studio furniture solutions tailored
-                        for small spaces, offering smart designs that maximize
-                        functionality, storage, and style without compromising
-                        comfort or aesthetics.
-                      "
+    <!-- IMAGE CAROUSEL START -->
+    <div class="section-content">
+      <div class="owl-carousel owl-carousel-filter3 owl-btn-bottom-center">
 
-                      </p>
-                      
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <!-- COLUMNS 3 -->
-              <div class="item">
-                <div
-                  class="line-filter-outer bg-cover"
-                  style="background-image: url(images/pro3.jpg)"
-                >
-                  <div class="hover-effect-1">
-                    <div class="hover-effect-content">
-                      <h4 class="m-t0 m-b25">
-                       Flat Furniture
-                      </h4>
-                      <p>
-                       "
-                        Modern, space-saving flat furniture designed for comfort
-                        and style, utilizing every inch efficiently while
-                        creating functional, elegant interiors that perfectly
-                        suit contemporary lifestyles.
-                      "
-                      </p>
-                     
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <!-- COLUMNS 4 -->
-              <div class="item">
-                <div
-                  class="line-filter-outer bg-cover"
-                  style="background-image: url(images/pro7.jpg)"
-                >
-                  <div class="hover-effect-1">
-                    <div class="hover-effect-content">
-                      <h4 class="m-t0 m-b25">
-                       Apartment Furniture
-                      </h4>
-                      <p>
-                        "
-                        Practical and stylish apartment furniture delivering
-                        modern comfort, clever storage, and efficient layouts,
-                        making small spaces functional, cozy, and aesthetically
-                        pleasing with personalized design.
-                      "
-                      </p>
-                      
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <!-- COLUMNS 5 -->
-              <div class="item">
-                <div
-                  class="line-filter-outer bg-cover"
-                  style="background-image: url(images/pro8.jpg)"
-                >
-                  <div class="hover-effect-1">
-                    <div class="hover-effect-content">
-                      <h4 class="m-t0 m-b25">Bungalow Furniture</h4>
-                      <p>
-                       "Luxurious bungalow furniture crafted for spacious homes,
-                        blending comfort, sophistication, and timeless design
-                        elements that enhance every room with elegance, charm,
-                        and individuality.
-"
-                      </p>
-                     
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <!-- COLUMNS 6 -->
-              <div class="item">
-                <div
-                  class="line-filter-outer bg-cover"
-                  style="background-image: url(images/pro9.jpg)"
-                >
-                  <div class="hover-effect-1">
-                    <div class="hover-effect-content">
-                      <h4 class="m-t0 m-b25">
-                       Mall Furniture
-                      </h4>
-                      <p>
-                       "
-                        Attractive and durable mall furniture designed to engage
-                        visitors, create striking impressions, and enhance
-                        commercial spaces with modern, eye-catching interiors
-                        that encourage longer stays.
-                      "
-                      </p>
-                     
-                    </div>
-                  </div>
-                </div>
+        <!-- COLUMNS 1 -->
+        <div class="item">
+          <div class="line-filter-outer bg-cover" style="background-image: url(images/pro1.jpg)">
+            <div class="hover-effect-1">
+              <div class="hover-effect-content text-center p-3">
+                <h4 class="m-0 mb-3">Office Furniture</h4>
+                <p class="project-text">
+                  Smart, ergonomic office furniture that improves productivity,
+                  enhances aesthetics, and creates a professional environment
+                  where teams feel inspired, focused, and motivated.
+                </p>
               </div>
             </div>
           </div>
         </div>
-        <!-- PROJECT SECTION END -->
+
+        <!-- COLUMNS 2 -->
+        <div class="item">
+          <div class="line-filter-outer bg-cover" style="background-image: url(images/pro2.jpg)">
+            <div class="hover-effect-1">
+              <div class="hover-effect-content text-center p-3">
+                <h4 class="m-0 mb-3">Studio Furniture</h4>
+                <p class="project-text">
+                  Compact and creative studio furniture solutions tailored for
+                  small spaces, offering smart designs that maximize functionality,
+                  storage, and style without compromising comfort.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- COLUMNS 3 -->
+        <div class="item">
+          <div class="line-filter-outer bg-cover" style="background-image: url(images/pro3.jpg)">
+            <div class="hover-effect-1">
+              <div class="hover-effect-content text-center p-3">
+                <h4 class="m-0 mb-3">Flat Furniture</h4>
+                <p class="project-text">
+                  Modern, space-saving flat furniture designed for comfort and style,
+                  utilizing every inch efficiently while creating elegant interiors
+                  that suit contemporary lifestyles.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- COLUMNS 4 -->
+        <div class="item">
+          <div class="line-filter-outer bg-cover" style="background-image: url(images/pro7.jpg)">
+            <div class="hover-effect-1">
+              <div class="hover-effect-content text-center p-3">
+                <h4 class="m-0 mb-3">Apartment Furniture</h4>
+                <p class="project-text">
+                  Practical and stylish apartment furniture delivering modern comfort,
+                  clever storage, and efficient layouts, making small spaces functional
+                  and aesthetically pleasing.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- COLUMNS 5 -->
+        <div class="item">
+          <div class="line-filter-outer bg-cover" style="background-image: url(images/pro8.jpg)">
+            <div class="hover-effect-1">
+              <div class="hover-effect-content text-center p-3">
+                <h4 class="m-0 mb-3">Bungalow Furniture</h4>
+                <p class="project-text">
+                  Luxurious bungalow furniture crafted for spacious homes, blending
+                  comfort, sophistication, and timeless design elements that enhance
+                  every room with elegance and individuality.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- COLUMNS 6 -->
+        <div class="item">
+          <div class="line-filter-outer bg-cover" style="background-image: url(images/pro9.jpg)">
+            <div class="hover-effect-1">
+              <div class="hover-effect-content text-center p-3">
+                <h4 class="m-0 mb-3">Mall Furniture</h4>
+                <p class="project-text">
+                  Attractive and durable mall furniture designed to engage visitors,
+                  create striking impressions, and enhance commercial spaces with
+                  modern, eye-catching interiors.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+    <!-- IMAGE CAROUSEL END -->
+  </div>
+</div>
+<!-- PROJECT SECTION END -->
+
 
         <!-- OUR TEAM START -->
         
@@ -954,6 +894,7 @@
                                             </div>
                                             <div class="clearfix">
                                                 <div class="testimonial-detail clearfix">
+                                                  <p class="text-black">Our office looks completely different.</p>
                                                     <strong class="testimonial-name text-black">Sneha Iyer</strong>
                                                     <!-- <span class="testimonial-position p-t5">Founder</span> -->
                                                 </div>                                            
@@ -974,7 +915,7 @@
                                         <div class="testimonial-5">
 
                                             <div class="testimonial-text">
-                                                <div class="testimonial-paragraph">
+                                                <div class="testimonial-paragraph"><p>Great designs for small spaces.</p>
                                                     <span class="fa fa-quote-left site-text-primary"></span>
                                                     <p> My studio apartment feels spacious and stylish
                               after their makeover. The furniture is compact yet
@@ -1005,6 +946,7 @@
 
                                             <div class="testimonial-text">
                                                 <div class="testimonial-paragraph">
+                                                  <p class="text-black">Exactly what we needed for our flat</p>
                                                     <span class="fa fa-quote-left site-text-primary"></span>
                                                     <p> They provide good repair and services. The prices are reasonable, which is nice for my budget. The team was friendly and helpful. They listened to my ideas and made my space look better.</p>
                                                 </div>
@@ -1102,14 +1044,14 @@
 Landmark : Pina colo road</li>
                                     </ul>
                                 </div>
-                                <div class="footer-social-icon">
+                                <!-- <div class="footer-social-icon">
                            			<ul class="social-icons f-social-link">
                                         <li><a href="javascript:void(0);" class="fa fa-google"></a></li>
-                                        <!-- <li><a href="javascript:void(0);" class="fa fa-rss"></a></li>
+                                        <li><a href="javascript:void(0);" class="fa fa-rss"></a></li>
                                         <li><a href="javascript:void(0);" class="fa fa-facebook"></a></li>
-                                        <li><a href="javascript:void(0);" class="fa fa-twitter"></a></li> -->
+                                        <li><a href="javascript:void(0);" class="fa fa-twitter"></a></li>
                                     </ul>
-                                </div>
+                                </div> -->
                             </div>
                         </div>
                                                 
@@ -1138,8 +1080,7 @@ Landmark : Pina colo road</li>
                 <div class="container">
                     <div class="row">
                         <div class="wt-footer-bot-center">
-                            <span class="copyrights-text">copyright © 2025 GSS furniture interior | Powered by Shree Krishna Digital Solution Pvt Ltd</span>
-                        </div>
+                            <span class="copyrights-text">copyright © 2025 GSS furniture interior |Developed by Shree Krishna Digital Solution Pvt Ltd</span>
                     </div>
                 </div>
             </div>
