@@ -29,7 +29,8 @@
     <link rel="stylesheet" href="css/style.css"><!-- MAIN STYLE SHEET -->
     <link rel="stylesheet" href="css/flaticon.min.css"><!-- FLATICON STYLE SHEET -->
     <link rel="stylesheet" href="css/skin/skin-1.css" class="skin"><!-- THEME COLOR CHANGE STYLE SHEET -->
-             
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
     
     <!-- GOOGLE FONTS -->
     <link href="https://fonts.googleapis.com/css?family=Poppins:300,300i,400,400i,500,500i,600,600i,700,800,800i,900" rel="stylesheet"> 
@@ -63,6 +64,31 @@
     gap: 30px; /* Increase gap for better touch targets */
   }
 }
+
+  .filter-navigation li a {
+  text-decoration: none;
+  padding: 8px 18px;
+  border: 1px solid #333;
+  display: inline-block;
+  color: #333;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+/* Hover effect */
+.filter-navigation li a:hover {
+  background-color: #333;
+  color: #fff !important; /* force text to stay visible */
+}
+
+/* Active state (selected tab) */
+.filter-navigation li.active a {
+  background-color: #333;
+  color: #fff !important;
+  border-color: #333;
+}
+
+
 </style>
 <body>
 
@@ -113,7 +139,7 @@
                 <a href="services.html">We Provide</a>
               </li>
               <li class="active">
-                <a href="work-grid.html">Gallery</a>
+                <a href="work-grid.html">Our Portfolio</a>
               </li>
               <li >
                 <a href="contact-1.html">Contact us</a>
@@ -123,9 +149,9 @@
               <a href="tel:+918451953292" class="contact-icon me-3" title="Call Now">
                 <i class="fa fa-phone"></i>
               </a>
-              <a href="https://wa.me/917506183544" target="_blank" class="contact-icon" title="Chat on WhatsApp">
-                <i class="fa fa-whatsapp"></i>
-              </a>
+             <a href="https://wa.me/917506183544" target="_blank" class="contact-icon" title="Chat on WhatsApp">
+ <i class="fab fa-whatsapp"></i>
+</a>
             </div>
           </div>
         </div>
@@ -161,7 +187,7 @@
                             <div>
                                 <ul class="wt-breadcrumb breadcrumb-style-2">
                                     <li><a href="index.html">Home</a></li>
-                                    <li>Gallery</li>
+                                    <li>Our Portfolio</li>
                                 </ul>
                             </div>
                         
@@ -189,99 +215,99 @@
                     <!-- PAGINATION END -->
                     <!-- GALLERY CONTENT START -->
                     <!-- OUR FEATURED GALLERY SECTION -->
-<div class="section-full p-t50 p-b50 ">
-    <div class="container">
-        <!-- Section Heading -->
-        <div class="section-head text-center">
-            <div class="wt-separator-outer">
-                <div class="wt-separator">
-                    <span class="site-text-primary text-uppercase sep-line-one">Our Featured Gallery</span>
-                    
-                </div>
-                <p>Discover the art of interiors through our carefully curated gallery. Each project reflects our commitment to blending beauty, functionality, and comfort in every space we design</p>
-                    <p class="d-none">From compact flats to luxurious bungalows, stylish offices, and vibrant commercial spaces, our work showcases creativity and craftsmanship that bring visions to life.
-What You’ll Find
-Residential Interiors – Flats, apartments, bungalows, and studios tailored to lifestyle and comfort.
-
-
-Office Interiors – Ergonomic, stylish, and productive work environments.
-
-
-Commercial Interiors – Engaging malls, retail outlets, and hospitality spaces.
-
-
-Before & After – Transformations that highlight smart design and impactful makeovers.
-
-
-Experience the Difference
-Browse through our completed projects to see how we turn ideas into elegant, functional spaces. Each design tells a story of innovation, detail, and style.
-</p>
-            </div>
-        </div>
-
-        <!-- Gallery Grid -->
-        <div class="row">
-            <!-- Image 1 -->
-            <div class="col-lg-4 col-md-6 m-b30">
-                <div class="wt-box">
-                    <img src="images/pro1.jpg" alt="" class="img-fluid" />
-                </div>
-            </div>
-            <!-- Image 2 -->
-            <div class="col-lg-4 col-md-6 m-b30">
-                <div class="wt-box">
-                    <img src="images/pro2.jpg" alt="" class="img-fluid" />
-                </div>
-            </div>
-            <!-- Image 3 -->
-            <div class="col-lg-4 col-md-6 m-b30">
-                <div class="wt-box">
-                    <img src="images/about-pic1.jpg" alt="" class="img-fluid" />
-                </div>
-            </div>
-            <!-- Image 4 -->
-            <div class="col-lg-4 col-md-6 m-b30">
-                <div class="wt-box">
-                    <img src="images/pro3.jpg" alt="" class="img-fluid" />
-                </div>
-            </div>
-            <!-- Image 5 -->
-            <div class="col-lg-4 col-md-6 m-b30">
-                <div class="wt-box">
-                    <img src="images/pro4.jpg" alt="" class="img-fluid" />
-                </div>
-            </div>
-            <!-- Image 6 -->
-            <div class="col-lg-4 col-md-6 m-b30">
-                <div class="wt-box">
-                    <img src="images/pro5.jpg" alt="" class="img-fluid" />
-                </div>
-            </div>
-            <!-- Image 7 -->
-            <div class="col-lg-4 col-md-6 m-b30">
-                <div class="wt-box">
-                    <img src="images/about-pic5.jpg" alt="" class="img-fluid" />
-                </div>
-            </div>
-            <!-- Image 8 -->
-            <div class="col-lg-4 col-md-6 m-b30">
-                <div class="wt-box">
-                    <img src="images/pro8.jpg" alt="" class="img-fluid" />
-                </div>
-            </div>
-            <!-- Image 9 -->
-            <div class="col-lg-4 col-md-6 m-b30">
-                <div class="wt-box">
-                    <img src="images/pro9.jpg" alt="" class="img-fluid" />
-                </div>
-            </div>
-        </div>
+<div class="section-full p-t50 p-b50">
+  <div class="container">
+    <!-- Section Heading -->
+    <div class="section-head text-center">
+      <h2 class="site-text-primary text-uppercase">Our Featured Portfolio</h2>
+      <p>
+        Discover the art of interiors through our carefully curated gallery.
+        Each project reflects our commitment to blending beauty, functionality,
+        and comfort in every space we design.
+      </p>
     </div>
-</div>
 
-            <!-- SECTION CONTENT END  -->
+    <!-- FILTER TABS -->
+    <div class="filter-wrap text-center p-b30">
+      <ul class="filter-navigation text-uppercase">
+        <li class="active"><a href="#" data-hover="All" data-filter="*">All</a></li>
+        <li><a href="#" data-hover="Flats" data-filter=".flat">Flats</a></li>
+        <li><a href="#" data-hover="bungalows" data-filter=".bungalow">Bungalows</a></li>
+        <li><a href="#" data-hover="Mall" data-filter=".mall">Malls</a></li>
+        <li><a href="#" data-hover="Apartments" data-filter=".apartment">Apartments</a></li>
+        <li><a href="#" data-hover="Studio" data-filter=".studio">Studios</a></li>
+        <li><a href="#" data-hover="Office" data-filter=".office">Office</a></li>
+      </ul>
+    </div>
 
+    <!-- Gallery Grid -->
+    <div class="gallery-grid row">
+      <!-- Office -->
+      <div class="col-lg-4 col-md-6 m-b30 item office">
+        <div class="wt-box">
+          <img src="images/pro1.jpg" alt="Office" class="img-fluid" />
         </div>
+      </div>
+
+      <!-- Flat -->
+      <div class="col-lg-4 col-md-6 m-b30 item flat">
+  <div class="wt-box">
+    <img src="images/pro2.jpg" alt="Flat" class="img-fluid" />
+  </div>
+</div>
+      <!-- Bungalow -->
+      <div class="col-lg-4 col-md-6 m-b30 item bungalow">
+        <div class="wt-box">
+          <img src="images/about-pic1.jpg" alt="Bungalow" class="img-fluid" />
+        </div>
+      </div>
+
+      <!-- Studio -->
+      <div class="col-lg-4 col-md-6 m-b30 item studio">
+        <div class="wt-box">
+          <img src="images/pro3.jpg" alt="Studio" class="img-fluid" />
+        </div>
+      </div>
+
+      <!-- Apartment -->
+      <div class="col-lg-4 col-md-6 m-b30 item apartment">
+        <div class="wt-box">
+          <img src="images/pro4.jpg" alt="Apartment" class="img-fluid" />
+        </div>
+      </div>
+
+      <!-- Mall -->
+      <div class="col-lg-4 col-md-6 m-b30 item mall">
+        <div class="wt-box">
+          <img src="images/pro5.jpg" alt="Mall" class="img-fluid" />
+        </div>
+      </div>
+
+      <!-- Extra Bungalow -->
+      <div class="col-lg-4 col-md-6 m-b30 item bungalow">
+        <div class="wt-box">
+          <img src="images/about-pic5.jpg" alt="Bungalow" class="img-fluid" />
+        </div>
+      </div>
+
+      <!-- Extra Flat -->
+      <div class="col-lg-4 col-md-6 m-b30 item flat">
+        <div class="wt-box">
+          <img src="images/pro8.jpg" alt="Flat" class="img-fluid" />
+        </div>
+      </div>
+
+      <!-- Extra Office -->
+      <div class="col-lg-4 col-md-6 m-b30 item office">
+        <div class="wt-box">
+          <img src="images/pro9.jpg" alt="Office" class="img-fluid" />
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- SECTION CONTENT END -->
+              </div>
         <!-- CONTENT END -->
         
         <!-- FOOTER START -->
@@ -355,7 +381,7 @@ Browse through our completed projects to see how we turn ideas into elegant, fun
                 
             </div>
         </div>
-    </div>
+    
 
     <!-- FOOTER COPYRIGHT -->
     <div class="footer-bottom overlay-wraper">
@@ -387,7 +413,32 @@ Browse through our completed projects to see how we turn ideas into elegant, fun
 </div>
 <!-- LOADING AREA  END ====== -->
 
+<!-- ISOTOPE JS -->
+<script src="https://unpkg.com/isotope-layout@3/dist/isotope.pkgd.min.js"></script>
+<script>
+  // init Isotope
+  var grid = document.querySelector(".gallery-grid");
+  var iso = new Isotope(grid, {
+    itemSelector: ".item",
+    layoutMode: "fitRows",
+  });
 
+  // filter items on button click
+  var filters = document.querySelectorAll(".filter-navigation a");
+  filters.forEach(function (filter) {
+    filter.addEventListener("click", function (e) {
+      e.preventDefault();
+      var filterValue = filter.getAttribute("data-filter");
+      iso.arrange({ filter: filterValue });
+
+      // update active tab
+      document.querySelectorAll(".filter-navigation li").forEach(function (li) {
+        li.classList.remove("active");
+      });
+      filter.parentElement.classList.add("active");
+    });
+  });
+</script>
 
 <!-- JAVASCRIPT  FILES ========================================= --> 
 <script  src="js/jquery-3.7.1.min.js"></script><!-- JQUERY.MIN JS -->
