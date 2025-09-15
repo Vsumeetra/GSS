@@ -61,6 +61,14 @@
       href="https://fonts.googleapis.com/css?family=Martel:200,300,400,600,700,800,900"
       rel="stylesheet"
     />
+
+     <!-- Owl Carousel CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css">
+
+
+
+
   </head>
   <style>.owl-carousel .owl-nav {
   display: none !important;
@@ -137,137 +145,172 @@
   font-size: 26px;
    
 }
-@media (max-width: 991px) {
-  /* ... (your existing mobile styles) ... */
-  
-  /* Flexbox for the entire menu to align items vertically */
-  .header-nav {
-    display: flex;
-    flex-direction: column;
-    align-items: center; /* Center everything horizontally */
-  }
-
-  /* Remove any conflicting margins from the navigation list */
-  .header-nav .navbar-nav {
-    margin: 0;
-  }
-  
-  /* Center the contact icons and give them a top margin for spacing */
-  .contact-icons {
-    justify-content: center;
-    
-    margin-top: 20px;
-    gap: 30px; /* Increase gap for better touch targets */
-  }
-
+/* Hamburger button */
+.navbar-toggler {
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 25px;
+  height: 20px;
+  background: none;
+  border: none;
+  cursor: pointer;
 }
+
+.navbar-toggler .icon-bar {
+  display: block;
+  width: 100%;
+  height: 3px;
+  background-color: #333;
+}
+
+/* Default navigation */
+.header-nav {
+  display: flex;
+  align-items: center;
+}
+
+/* Contact icons inside menu (hidden on desktop) */
+.contact-icons-mobile {
+  display: none;
+  margin-top: 15px;
+}
+
+/* Responsive styles */
+@media (max-width: 991px) {
+  .navbar-toggler {
+    display: flex;
+  }
+
+  .header-nav {
+    position: fixed;
+    top: 0;
+    left: -250px;
+    width: 250px;
+    height: 100%;
+    background: #fff;
+    flex-direction: column;
+    padding: 20px;
+    transition: left 0.3s ease;
+    box-shadow: 2px 0 8px rgba(0,0,0,0.15);
+    z-index: 999;
+  }
+
+  .header-nav.open {
+    left: 0;
+  }
+
+  .header-nav ul {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .contact-icons-mobile {
+    display: flex;
+    gap: 15px;
+  }
+
+  /* Hide desktop icons */
+  .contact-icons.d-lg-flex {
+    display: none !important;
+  }
+}
+
 
 
 </style>
 
   <body>
     <div class="page-wraper">
-      <!-- HEADER START -->
-    <header class="site-header header-style-1 nav-wide mobile-sider-drawer-menu">
+ <!-- HEADER START -->
+<header class="site-header header-style-1 nav-wide mobile-sider-drawer-menu">
   <div class="sticky-header main-bar-wraper">
     <div class="main-bar bg-white">
-      <div class="container header-center d-flex align-items-center justify-content-between">
-        <div class="wt-header-left">
-          <div class="logo-header">
-            <div class="logo-header-inner logo-header-one">
-              <a href="index.html">
-                <img
-                  src="images/logo-dark.png"
-                  width="171"
-                  height="49"
-                  alt=""
-                />
-              </a>
-            </div>
-          </div>
+      <div class="container d-flex align-items-center justify-content-between">
+        
+        <!-- Logo -->
+        <div class="logo-header">
+          <a href="index.html">
+            <img src="images/logo-dark.png" width="171" height="49" alt="Logo"/>
+          </a>
         </div>
 
-        <div class="wt-header-center flex-grow-1 text-center">
-          <button
-            id="mobile-side-drawer"
-            data-target=".header-nav"
-            data-toggle="collapse"
-            type="button"
-            class="navbar-toggler collapsed"
-          >
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar icon-bar-first"></span>
-            <span class="icon-bar icon-bar-two"></span>
-            <span class="icon-bar icon-bar-three"></span>
-          </button>
-          <div class="header-nav navbar-collapse collapse nav-dark d-flex justify-content-center">
-            <ul class="nav navbar-nav nav-line-animation">
-              <li class="active">
-                <a href="index.html">Home</a>
-              </li>
-              <li>
-                <a href="about-1.html">About us</a>
-              </li>
-              <li>
-                <a href="services.html">We Provide</a>
-              </li>
-              <li>
-                <a href="work-grid.html">Our Portfolio</a>
-              </li>
-              <li>
-                <a href="contact-1.html">Contact us</a>
-              </li>
-            </ul>
-            <div class="contact-icons d-lg-none d-flex justify-content-center mt-3">
-              <a href="tel:+918451953292" class="contact-icon me-3" title="Call Now">
-                <i class="fa fa-phone"></i>
-              </a>
-              <a href="https://wa.me/917506183544" target="_blank" class="contact-icon" title="Chat on WhatsApp">
-                <i class="fa fa-whatsapp"></i>
-              </a>
-            </div>
-          </div>
-        </div>
+        <!-- Mobile Toggle Button -->
+        <button class="navbar-toggler" type="button" id="mobile-toggle">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
 
-        <div class="contact-icons d-none d-lg-flex align-items-center ">
+        <!-- Navigation -->
+        <nav class="header-nav">
+          <ul class="nav navbar-nav">
+            <li class="active"><a href="index.html">Home</a></li>
+            <li><a href="about-1.html">About us</a></li>
+            <li><a href="services.html">We Provide</a></li>
+            <li><a href="work-grid.html">Our Portfolio</a></li>
+            <li><a href="contact-1.html">Contact us</a></li>
+          </ul>
+
+          <!-- Call & WhatsApp icons (shown inside menu on mobile) -->
+          <div class="contact-icons-mobile">
+            <a href="tel:+918451953292" class="contact-icon" title="Call Now">
+              <i class="fa fa-phone"></i>
+            </a>
+            <a href="https://wa.me/917506183544" target="_blank" class="contact-icon" title="Chat on WhatsApp">
+              <i class="fab fa-whatsapp"></i>
+            </a>
+          </div>
+        </nav>
+
+        <!-- Contact Icons (Desktop only) -->
+        <div class="contact-icons d-none d-lg-flex">
           <a href="tel:+918451953292" class="contact-icon me-3" title="Call Now">
             <i class="fa fa-phone"></i>
           </a>
           <a href="https://wa.me/917506183544" target="_blank" class="contact-icon" title="Chat on WhatsApp">
-  <i class="fab fa-whatsapp"></i>
-</a>
+            <i class="fab fa-whatsapp"></i>
+          </a>
         </div>
+
       </div>
     </div>
   </div>
 </header>
+<!-- HEADER END -->
 
 
 
 
 
 
-      <!-- HEADER END -->
+
+  
 
       <!-- CONTENT START -->
       <div class="page-content">
-        <!-- VIDEO BANNER START -->
-<section class="video-banner position-relative">
-  <!-- Background Video -->
-  <video autoplay muted loop playsinline class="w-100" style="object-fit: cover; height: 100vh;">
-    <source src="https://cdn.pixabay.com/video/2024/05/16/212213_small.mp4" type="video/mp4">
-    Your browser does not support the video tag.
-  </video>
+  <!-- VIDEO BANNER START -->
+  <section class="video-banner position-relative">
+    
+    <!-- Background Video -->
+    <video autoplay muted loop playsinline class="w-100 h-100 position-absolute top-0 start-0 object-fit-cover">
+      <source src="https://cdn.pixabay.com/video/2024/05/16/212213_small.mp4" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
 
-  <!-- Overlay -->
-  <div class="overlay position-absolute top-0 start-0 w-100 h-100" style="background-color: rgba(0,0,0,0.5);"></div>
+    <!-- Overlay -->
+    <div class="position-absolute top-0 start-0 w-100 h-100 bg-dark opacity-50"></div>
 
-  <!-- Text Content -->
-  <div class="banner-text position-absolute top-50 start-50 translate-middle text-center text-white">
-    <h1 class="display-4 fw-bold">Welcome to <br> GSS Furniture Interior</h1>
-    <p class="lead">Giving your home a new style</p>
-  </div>
-</section>
+    <!-- Text Content -->
+    <div class="d-flex flex-column justify-content-center align-items-center text-center text-white position-relative vh-100 px-3">
+      <h1 class="fw-bold display-4 display-md-3 display-sm-5">
+        Welcome to <br> GSS Furniture Interior
+      </h1>
+      <p class="lead fs-5">Giving your home a new style</p>
+    </div>
+  </section>
+</div>
+
 <!-- VIDEO BANNER END -->
 
         </div> 
@@ -922,7 +965,90 @@
                                 </div>                                            
                             </div>
                         </div>
-                        <!-- Repeat other testimonial items (Karan Desai, Rohan Verma) -->
+                        
+                         <div class="item">
+                            <div class="testimonial-5">
+                                <div class="testimonial-text">
+                                    <div class="testimonial-paragraph">
+                                        <p class="text-black">Great designs for small spaces.</p>
+                                        <span class="fa fa-quote-left site-text-primary"></span>
+                                        <p>                              My studio apartment feels spacious and stylish
+                              after their makeover. The furniture is compact yet
+                              functional. Excellent use of every corner without
+                              compromising beauty.
+</p>
+                                    </div>
+                                </div>
+                                <div class="clearfix">
+                                    <div class="testimonial-detail clearfix">
+                                        <strong class="testimonial-name text-black">Karan Desai</strong>
+                                    </div>                                            
+                                    <div class="testimonial-pic-block"> 
+                                        <div class="testimonial-pic">
+                                            <i class="fas fa-star" style="font-size: 15px; color: gold;"></i>
+                                            <i class="fas fa-star" style="font-size: 15px; color: gold;"></i>
+                                            <i class="fas fa-star" style="font-size: 15px; color: gold;"></i>
+                                            <i class="fas fa-star" style="font-size: 15px; color: gold;"></i>
+                                            <i class="fas fa-star-half" style="font-size: 15px; color: gold;"></i>
+                                        </div>
+                                    </div>
+                                </div>                                            
+                            </div>
+                        </div>
+
+                        <div class="item">
+                            <div class="testimonial-5">
+                                <div class="testimonial-text">
+                                    <div class="testimonial-paragraph">
+                                        <p class="text-black">Exactly what we needed for our flat</p>
+                                        <span class="fa fa-quote-left site-text-primary"></span>
+                                        <p>The team transformed our flat with smart furniture choices that perfectly fit the space. 
+                   It feels cozy yet spacious, and we couldn’t be happier with the result.</p>
+                                    </div>
+                                </div>
+                                <div class="clearfix">
+                                    <div class="testimonial-detail clearfix">
+                                        <strong class="testimonial-name text-black">Rohan Verma</strong>
+                                    </div>                                            
+                                    <div class="testimonial-pic-block"> 
+                                        <div class="testimonial-pic">
+                                            <i class="fas fa-star" style="font-size: 15px; color: gold;"></i>
+                                            <i class="fas fa-star" style="font-size: 15px; color: gold;"></i>
+                                            <i class="fas fa-star" style="font-size: 15px; color: gold;"></i>
+                                            <i class="fas fa-star" style="font-size: 15px; color: gold;"></i>
+                                            
+                                        </div>
+                                    </div>
+                                </div>                                            
+                            </div>
+                        </div>
+
+                        <div class="item">
+                            <div class="testimonial-5">
+                                <div class="testimonial-text">
+                                    <div class="testimonial-paragraph">
+                                        <p class="text-black">Our office looks completely different.</p>
+                                        <span class="fa fa-quote-left site-text-primary"></span>
+                                        <p>The team listened to our ideas and gave us practical, stylish furniture. Every piece fits perfectly, and the space feels more open now.</p>
+                                    </div>
+                                </div>
+                                <div class="clearfix">
+                                    <div class="testimonial-detail clearfix">
+                                        <strong class="testimonial-name text-black">Sneha Iyer</strong>
+                                    </div>                                            
+                                    <div class="testimonial-pic-block"> 
+                                        <div class="testimonial-pic">
+                                            <i class="fas fa-star" style="font-size: 15px; color: gold;"></i>
+                                            <i class="fas fa-star" style="font-size: 15px; color: gold;"></i>
+                                            <i class="fas fa-star" style="font-size: 15px; color: gold;"></i>
+                                            <i class="fas fa-star" style="font-size: 15px; color: gold;"></i>
+                                            <i class="fas fa-star" style="font-size: 15px; color: gold;"></i>
+                                        </div>
+                                    </div>
+                                </div>                                            
+                            </div>
+                        </div>
+
                     </div>
                 </div>
 
@@ -939,7 +1065,8 @@
             </div> 
         </div>
     </div>
-</div>   
+</div>  
+ 
 <!-- TESTIMONIAL SECTION END -->  
 
         <!-- CONTENT END -->
@@ -1064,16 +1191,41 @@
     <!-- CUSTOM FUCTIONS  -->
     <script src="js/shortcode.js"></script>
     <!-- SHORTCODE FUCTIONS  -->
+  
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+    <!-- Owl Carousel JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
 
     <!-- REVOLUTION JS FILES -->
     <script src="plugins/revolution/revolution/js/jquery.themepunch.tools.min.js"></script>
     <script src="plugins/revolution/revolution/js/jquery.themepunch.revolution.min.js"></script>
+
+     <script>
+    $(document).ready(function(){
+      $(".testimonial-home").owlCarousel({
+        items: 1,
+        loop: true,
+        autoplay: true,
+        autoplayTimeout: 3000,
+        autoplayHoverPause: true,
+        nav: false,
+        dots: false
+      });
+    });
+    </script>
 
     <!-- SLIDER REVOLUTION 5.0 EXTENSIONS  (Load Extensions only on Local File Systems !  The following part can be removed on Server for On Demand Loading) -->
     <script src="plugins/revolution/revolution/js/extensions/revolution-plugin.js"></script>
 
     <!-- REVOLUTION SLIDER SCRIPT FILES -->
     <script src="js/rev-script-1.js"></script>
+
+    <script>
+  document.getElementById("mobile-toggle").addEventListener("click", function() {
+    document.querySelector(".header-nav").classList.toggle("open");
+  });
+</script>
     
       <!-- Floating whatsapp-icon -->
     <a href="https://wa.me/917506183544" target="_blank" id="whatsapp-float">

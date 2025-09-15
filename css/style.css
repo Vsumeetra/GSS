@@ -5990,7 +5990,7 @@ line-height:normal;}
 -------------------------------------*/
 /*1.1 footer fixed with fullscreen view*/
 .footer-fixed .site-footer {	position:fixed;	width:100%;	bottom:0; border:none; z-index:0;}
-.footer-fixed .page-content { 	position:relative;	z-index:1;	background-color:#fff;}
+.footer-fixed .page-content { 	position:relative;	z-index:1;	background-color:#f8f9fa;}
 @media only screen and (max-width:1200px) { 
 .footer-fixed .site-footer { 	position:static;}
 .footer-fixed .page-wraper { 	padding-bottom:0 !important;}
@@ -6080,8 +6080,8 @@ line-height:normal;}
 .footer-dark .footer-top p a{color: #fff;}
 .footer-dark .footer-top .widget_newsletter .form-control { 	background-color:#0e0e0e;	border-color:#2d2d2d;}
 
-.footer-light .footer-top  {background-color:#eee;}
-.footer-light .footer-bottom { 	background-color:#e6e6e6; }
+.footer-light .footer-top  {background-color:#f6f7f8;}
+.footer-light .footer-bottom { 	background-color:#f6f7f8; }
 
 .footer-top {
     padding: 60px 0px 0px 0px;
