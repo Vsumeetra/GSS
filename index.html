@@ -35,7 +35,7 @@
     <!-- FLATICON STYLE SHEET -->
     <link rel="stylesheet" href="css/skin/skin-1.css" class="skin" />
     <!-- THEME COLOR CHANGE STYLE SHEET -->
-     
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/magnific-popup.min.css" />
      <!-- Font Awesome 6 -->
 <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta6fa8qWj/4AER1S8k7y846Nqj188uO+vK+Ww1X44T520A==" crossorigin="anonymous" referrerpolicy="no-referrer" /> -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
@@ -70,9 +70,10 @@
 
 
   </head>
-  <style>.owl-carousel .owl-nav {
+  <style>
+  /* .owl-carousel .owl-nav {
   display: none !important;
-}
+} */
 
 .testimonial-pic {
   display: flex;
@@ -145,172 +146,137 @@
   font-size: 26px;
    
 }
-/* Hamburger button */
-.navbar-toggler {
-  display: none;
-  flex-direction: column;
-  justify-content: space-between;
-  width: 25px;
-  height: 20px;
-  background: none;
-  border: none;
-  cursor: pointer;
-}
-
-.navbar-toggler .icon-bar {
-  display: block;
-  width: 100%;
-  height: 3px;
-  background-color: #333;
-}
-
-/* Default navigation */
-.header-nav {
-  display: flex;
-  align-items: center;
-}
-
-/* Contact icons inside menu (hidden on desktop) */
-.contact-icons-mobile {
-  display: none;
-  margin-top: 15px;
-}
-
-/* Responsive styles */
 @media (max-width: 991px) {
-  .navbar-toggler {
-    display: flex;
-  }
-
+  /* ... (your existing mobile styles) ... */
+  
+  /* Flexbox for the entire menu to align items vertically */
   .header-nav {
-    position: fixed;
-    top: 0;
-    left: -250px;
-    width: 250px;
-    height: 100%;
-    background: #fff;
-    flex-direction: column;
-    padding: 20px;
-    transition: left 0.3s ease;
-    box-shadow: 2px 0 8px rgba(0,0,0,0.15);
-    z-index: 999;
-  }
-
-  .header-nav.open {
-    left: 0;
-  }
-
-  .header-nav ul {
-    flex-direction: column;
-    gap: 15px;
-  }
-
-  .contact-icons-mobile {
     display: flex;
-    gap: 15px;
+    flex-direction: column;
+    align-items: center; /* Center everything horizontally */
   }
 
-  /* Hide desktop icons */
-  .contact-icons.d-lg-flex {
-    display: none !important;
+  /* Remove any conflicting margins from the navigation list */
+  .header-nav .navbar-nav {
+    margin: 0;
   }
+  
+  /* Center the contact icons and give them a top margin for spacing */
+  .contact-icons {
+    justify-content: center;
+    
+    margin-top: 20px;
+    gap: 30px; /* Increase gap for better touch targets */
+  }
+
 }
-
 
 
 </style>
 
   <body>
     <div class="page-wraper">
- <!-- HEADER START -->
-<header class="site-header header-style-1 nav-wide mobile-sider-drawer-menu">
+      <!-- HEADER START -->
+    <header class="site-header header-style-1 nav-wide mobile-sider-drawer-menu">
   <div class="sticky-header main-bar-wraper">
     <div class="main-bar bg-white">
-      <div class="container d-flex align-items-center justify-content-between">
-        
-        <!-- Logo -->
-        <div class="logo-header">
-          <a href="index.html">
-            <img src="images/logo-dark.png" width="171" height="49" alt="Logo"/>
-          </a>
+      <div class="container header-center d-flex align-items-center justify-content-between">
+        <div class="wt-header-left">
+          <div class="logo-header">
+            <div class="logo-header-inner logo-header-one">
+              <a href="index.html">
+                <img
+                  src="images/logo-dark.png"
+                  width="171"
+                  height="49"
+                  alt=""
+                />
+              </a>
+            </div>
+          </div>
         </div>
 
-        <!-- Mobile Toggle Button -->
-        <button class="navbar-toggler" type="button" id="mobile-toggle">
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-        </button>
-
-        <!-- Navigation -->
-        <nav class="header-nav">
-          <ul class="nav navbar-nav">
-            <li class="active"><a href="index.html">Home</a></li>
-            <li><a href="about-1.html">About us</a></li>
-            <li><a href="services.html">We Provide</a></li>
-            <li><a href="work-grid.html">Our Portfolio</a></li>
-            <li><a href="contact-1.html">Contact us</a></li>
-          </ul>
-
-          <!-- Call & WhatsApp icons (shown inside menu on mobile) -->
-          <div class="contact-icons-mobile">
-            <a href="tel:+918451953292" class="contact-icon" title="Call Now">
-              <i class="fa fa-phone"></i>
-            </a>
-            <a href="https://wa.me/917506183544" target="_blank" class="contact-icon" title="Chat on WhatsApp">
-              <i class="fab fa-whatsapp"></i>
-            </a>
+        <div class="wt-header-center flex-grow-1 text-center">
+          <button
+            id="mobile-side-drawer"
+            data-target=".header-nav"
+            data-toggle="collapse"
+            type="button"
+            class="navbar-toggler collapsed"
+          >
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar icon-bar-first"></span>
+            <span class="icon-bar icon-bar-two"></span>
+            <span class="icon-bar icon-bar-three"></span>
+          </button>
+          <div class="header-nav navbar-collapse collapse nav-dark d-flex justify-content-center">
+            <ul class="nav navbar-nav nav-line-animation">
+              <li class="active">
+                <a href="index.html">Home</a>
+              </li>
+              <li>
+                <a href="about-1.html">About us</a>
+              </li>
+              <li>
+                <a href="services.html">We Provide</a>
+              </li>
+              <li>
+                <a href="work-grid.html">Our Portfolio</a>
+              </li>
+              <li>
+                <a href="contact-1.html">Contact us</a>
+              </li>
+            </ul>
+            <div class="contact-icons d-lg-none d-flex justify-content-center mt-3">
+              <a href="tel:+918451953292" class="contact-icon me-3" title="Call Now">
+                <i class="fa fa-phone"></i>
+              </a>
+              <a href="https://wa.me/917506183544" target="_blank" class="contact-icon" title="Chat on WhatsApp">
+                <i class="fa fa-whatsapp"></i>
+              </a>
+            </div>
           </div>
-        </nav>
+        </div>
 
-        <!-- Contact Icons (Desktop only) -->
-        <div class="contact-icons d-none d-lg-flex">
+        <div class="contact-icons d-none d-lg-flex align-items-center ">
           <a href="tel:+918451953292" class="contact-icon me-3" title="Call Now">
-            <i class="fa fa-phone"></i>
+            <i class="fa fa-phone"style="color: inherit;"></i>
           </a>
           <a href="https://wa.me/917506183544" target="_blank" class="contact-icon" title="Chat on WhatsApp">
-            <i class="fab fa-whatsapp"></i>
-          </a>
+  <i class="fab fa-whatsapp"style="color: #25D366;"></i>
+</a>
         </div>
-
       </div>
     </div>
   </div>
 </header>
-<!-- HEADER END -->
 
 
 
 
 
 
-
-  
+      <!-- HEADER END -->
 
       <!-- CONTENT START -->
       <div class="page-content">
-  <!-- VIDEO BANNER START -->
-  <section class="video-banner position-relative">
-    
-    <!-- Background Video -->
-    <video autoplay muted loop playsinline class="w-100 h-100 position-absolute top-0 start-0 object-fit-cover">
-      <source src="https://cdn.pixabay.com/video/2024/05/16/212213_small.mp4" type="video/mp4">
-      Your browser does not support the video tag.
-    </video>
+        <!-- VIDEO BANNER START -->
+<section class="video-banner position-relative">
+  <!-- Background Video -->
+  <video autoplay muted loop playsinline class="w-100" style="object-fit: cover; height: 100vh;">
+    <source src="https://cdn.pixabay.com/video/2024/05/16/212213_small.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+  </video>
 
-    <!-- Overlay -->
-    <div class="position-absolute top-0 start-0 w-100 h-100 bg-dark opacity-50"></div>
+  <!-- Overlay -->
+  <div class="overlay position-absolute top-0 start-0 w-100 h-100" style="background-color: rgba(0,0,0,0.5);"></div>
 
-    <!-- Text Content -->
-    <div class="d-flex flex-column justify-content-center align-items-center text-center text-white position-relative vh-100 px-3">
-      <h1 class="fw-bold display-4 display-md-3 display-sm-5">
-        Welcome to <br> GSS Furniture Interior
-      </h1>
-      <p class="lead fs-5">Giving your home a new style</p>
-    </div>
-  </section>
-</div>
-
+  <!-- Text Content -->
+  <div class="banner-text position-absolute top-50 start-50 translate-middle text-center text-white">
+    <h1 class="display-4 fw-bold">Welcome to <br> GSS Furniture Interior</h1>
+    <p class="lead">Giving your home a new style</p>
+  </div>
+</section>
 <!-- VIDEO BANNER END -->
 
         </div> 
@@ -380,160 +346,127 @@
             </div>   
             <!-- WELCOME  SECTION END -->  
 
-        <!-- WHAT WE DO SECTION START -->
-        <div class="section-full p-t80 p-b50 bg-gray">
-          <div class="container">
-            <!-- TITLE START -->
-            <div class="section-head text-center">
-              <div class="wt-separator-outer separator-center">
-                <div class="wt-separator">
-                  <span class="site-text-primary text-uppercase sep-line-one"
-                    >what you prefer</span
-                  >
-                </div>
-              </div>
-              <h2>What we do</h2>
-            </div>
-            <!-- TITLE END -->
-            <div class="section-content">
-              <div class="row">
-                <div class="col-md-4 col-sm-6 col-xs-6 col-xs-100pc m-b30">
-                  <div class="hover-box-effect v-icon-effect">
-                    <div
-                      class="wt-icon-box-wraper center p-lr30 p-b50 p-t50 bg-white"
-                    >
-                      <div class="icon-lg site-text-primary m-b25">
-                        <span class="icon-cell site-text-primary"
-                          ><i class="v-icon flaticon-sketch"></i
-                        ></span>
-                      </div>
-                      <div class="icon-content text-black">
-                        <h4 class="wt-tilte m-b25">Creative Designs
-</h4>
-                        <p>
-                         Innovative and stylish interior solutions crafted to enhance comfort, beauty, and functionality within every space.
-                        </p>
+<!-- WHAT WE DO SECTION START -->
+<div class="section-full p-t80 p-b80 bg-gray">
+  <div class="container">
+    <!-- TITLE START -->
+    <div class="section-head text-center">
+      <div class="wt-separator-outer separator-center">
+        <div class="wt-separator">
+          <span class="site-text-primary text-uppercase sep-line-one">what you prefer</span>
+        </div>
+      </div>
+      <h2>What we do</h2>
+    </div>
+    <!-- TITLE END -->
 
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div class="col-md-4 col-sm-6 col-xs-6 col-xs-100pc m-b30">
-                  <div class="hover-box-effect v-icon-effect">
-                    <div
-                      class="wt-icon-box-wraper center p-lr30 p-b50 p-t50 bg-white"
-                    >
-                      <div class="icon-lg site-text-primary m-b25">
-                        <span class="icon-cell site-text-primary"
-                          ><i class="v-icon flaticon-window"></i
-                        ></span>
-                      </div>
-                      <div class="icon-content text-black">
-                        <h4 class="wt-tilte m-b25">Quality Materials</h4>
-                        <p>
-                         We use only premium, durable, and sustainable materials ensuring long-lasting elegance and modern interior design appeal.
-                        </p>
-                        
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div class="col-md-4 col-sm-6 col-xs-6 col-xs-100pc m-b30">
-                  <div class="hover-box-effect v-icon-effect">
-                    <div
-                      class="wt-icon-box-wraper center p-lr30 p-b50 p-t50 bg-white"
-                    >
-                      <div class="icon-lg site-text-primary m-b25">
-                        <span class="icon-cell site-text-primary"
-                          ><i class="v-icon flaticon-window-5"></i
-                        ></span>
-                      </div>
-                      <div class="icon-content text-black">
-                        <h4 class="wt-tilte m-b25">Expert Team</h4>
-                        <p>
-                        Our experienced designers and craftsmen work together to deliver customized interiors that perfectly suit client needs.
-                        </p>
-                       
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div class="col-md-4 col-sm-6 col-xs-6 col-xs-100pc m-b30">
-                  <div class="hover-box-effect v-icon-effect">
-                    <div
-                      class="wt-icon-box-wraper center p-lr30 p-b50 p-t50 bg-white"
-                    >
-                      <div class="icon-lg site-text-primary m-b25">
-                        <span class="icon-cell site-text-primary"
-                          ><i class="v-icon flaticon-plant"></i
-                        ></span>
-                      </div>
-                      <div class="icon-content text-black">
-                        <h4 class="wt-tilte m-b25">Timely Delivery</h4>
-                        <p>
-                        We value your time and ensure projects are executed efficiently with strict deadlines and seamless coordination.
-                        </p>
-                      
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div class="col-md-4 col-sm-6 col-xs-6 col-xs-100pc m-b30">
-                  <div class="hover-box-effect v-icon-effect">
-                    <div
-                      class="wt-icon-box-wraper center p-lr30 p-b50 p-t50 bg-white"
-                    >
-                      <div class="icon-lg site-text-primary m-b25">
-                        <span class="icon-cell site-text-primary"
-                          ><i class="v-icon flaticon-sofa"></i
-                        ></span>
-                      </div>
-                      <div class="icon-content text-black">
-                        <h4 class="wt-tilte m-b25">Affordable Solutions</h4>
-                        <p>
-                         High-quality interior designs tailored to your budget without compromising on creativity, functionality, or premium finishing.
-                        </p>
-                      
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div class="col-md-4 col-sm-6 col-xs-6 col-xs-100pc m-b30">
-                  <div class="hover-box-effect v-icon-effect">
-                    <div
-                      class="wt-icon-box-wraper center p-lr30 p-b50 p-t50 bg-white"
-                    >
-                      <div class="icon-lg site-text-primary m-b25">
-                        <span class="icon-cell site-text-primary"
-                          ><i class="v-icon flaticon-review"></i
-                        ></span>
-                      </div>
-                      <div class="icon-content text-black">
-                        <h4 class="wt-tilte m-b25">Customer Satisfaction</h4>
-                        <p>
-                         We prioritize client happiness by delivering interiors that match expectations, lifestyle, and personal design preferences.
-                        </p>
-                       
-                      </div>
-                    </div>
-                  </div>
-                </div>
+    <div class="section-content">
+      <div class="row">
+        <!-- Card 1 -->
+        <div class="col-md-4 col-sm-6 col-xs-6 col-xs-100pc m-b30 d-flex">
+          <div class="hover-box-effect v-icon-effect flex-fill d-flex flex-column">
+            <div class="wt-icon-box-wraper center p-lr30 p-b50 p-t50 bg-white flex-grow-1 d-flex flex-column align-items-center">
+              <div class="icon-lg site-text-primary m-b25 text-center">
+                <span class="icon-cell site-text-primary"><i class="v-icon flaticon-sketch"></i></span>
+              </div>
+              <div class="icon-content text-black mt-auto text-center">
+                <h4 class="wt-tilte m-b25">Creative Designs</h4>
+                <p>Innovative and stylish interior solutions crafted to enhance comfort, beauty, and functionality within every space.</p>
               </div>
             </div>
           </div>
         </div>
-        <!-- WHAT WE DO  SECTION END -->
 
-    <!-- PROJECT SECTION START -->
-<div class="section-full py-5 bg-white">
+        <!-- Card 2 -->
+        <div class="col-md-4 col-sm-6 col-xs-6 col-xs-100pc m-b30 d-flex">
+          <div class="hover-box-effect v-icon-effect flex-fill d-flex flex-column">
+            <div class="wt-icon-box-wraper center p-lr30 p-b50 p-t50 bg-white flex-grow-1 d-flex flex-column align-items-center">
+              <div class="icon-lg site-text-primary m-b25 text-center">
+                <span class="icon-cell site-text-primary"><i class="v-icon flaticon-window"></i></span>
+              </div>
+              <div class="icon-content text-black mt-auto text-center">
+                <h4 class="wt-tilte m-b25">Quality Materials</h4>
+                <p>We use only premium, durable, and sustainable materials ensuring long-lasting elegance and modern interior design appeal.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 3 -->
+        <div class="col-md-4 col-sm-6 col-xs-6 col-xs-100pc m-b30 d-flex">
+          <div class="hover-box-effect v-icon-effect flex-fill d-flex flex-column">
+            <div class="wt-icon-box-wraper center p-lr30 p-b50 p-t50 bg-white flex-grow-1 d-flex flex-column align-items-center">
+              <div class="icon-lg site-text-primary m-b25 text-center">
+                <span class="icon-cell site-text-primary"><i class="v-icon flaticon-window-5"></i></span>
+              </div>
+              <div class="icon-content text-black mt-auto text-center">
+                <h4 class="wt-tilte m-b25">Expert Team</h4>
+                <p>Our experienced designers and craftsmen work together to deliver customized interiors that perfectly suit client needs.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 4 -->
+        <div class="col-md-4 col-sm-6 col-xs-6 col-xs-100pc m-b30 d-flex">
+          <div class="hover-box-effect v-icon-effect flex-fill d-flex flex-column">
+            <div class="wt-icon-box-wraper center p-lr30 p-b50 p-t50 bg-white flex-grow-1 d-flex flex-column align-items-center">
+              <div class="icon-lg site-text-primary m-b25 text-center">
+                <span class="icon-cell site-text-primary"><i class="v-icon flaticon-plant"></i></span>
+              </div>
+              <div class="icon-content text-black mt-auto text-center">
+                <h4 class="wt-tilte m-b25">Timely Delivery</h4>
+                <p>We value your time and ensure projects are executed efficiently with strict deadlines and seamless coordination.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 5 -->
+        <div class="col-md-4 col-sm-6 col-xs-6 col-xs-100pc m-b30 d-flex">
+          <div class="hover-box-effect v-icon-effect flex-fill d-flex flex-column">
+            <div class="wt-icon-box-wraper center p-lr30 p-b50 p-t50 bg-white flex-grow-1 d-flex flex-column align-items-center">
+              <div class="icon-lg site-text-primary m-b25 text-center">
+                <span class="icon-cell site-text-primary"><i class="v-icon flaticon-sofa"></i></span>
+              </div>
+              <div class="icon-content text-black mt-auto text-center">
+                <h4 class="wt-tilte m-b25">Affordable Solutions</h4>
+                <p>High-quality interior designs tailored to your budget without compromising on creativity, functionality, or premium finishing.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 6 -->
+        <div class="col-md-4 col-sm-6 col-xs-6 col-xs-100pc m-b30 d-flex">
+          <div class="hover-box-effect v-icon-effect flex-fill d-flex flex-column">
+            <div class="wt-icon-box-wraper center p-lr30 p-b50 p-t50 bg-white flex-grow-1 d-flex flex-column align-items-center">
+              <div class="icon-lg site-text-primary m-b25 text-center">
+                <span class="icon-cell site-text-primary"><i class="v-icon flaticon-review"></i></span>
+              </div>
+              <div class="icon-content text-black mt-auto text-center">
+                <h4 class="wt-tilte m-b25">Customer Satisfaction</h4>
+                <p>We prioritize client happiness by delivering interiors that match expectations, lifestyle, and personal design preferences.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>
+<!-- WHAT WE DO SECTION END -->
+
+
+<!-- PROJECT SECTION START -->
+<div class="section-full py-5 bg-white border-bottom" style="border-color: #eee;">
   <div class="container">
     <!-- TITLE START -->
     <div class="section-head text-center mb-5">
       <div class="wt-separator-outer separator-center mb-3">
         <div class="wt-separator">
-          <span class="site-text-primary text-uppercase sep-line-one">
-            Recently finished
-          </span>
+          <span class="site-text-primary text-uppercase sep-line-one">Recently finished</span>
         </div>
       </div>
       <h2 class="fw-bold">Our latest projects</h2>
@@ -543,9 +476,9 @@
     <!-- IMAGE CAROUSEL START -->
     <div class="section-content">
       <div class="owl-carousel owl-carousel-filter3 owl-btn-bottom-center">
-
-        <!-- COLUMNS 1 -->
+        <!-- Card 1 -->
         <div class="item">
+          <a href="services.html#office-furniture" class="d-block">
           <div class="line-filter-outer bg-cover" style="background-image: url(images/pro1.jpg)">
             <div class="hover-effect-1">
               <div class="hover-effect-content text-center p-3">
@@ -558,10 +491,11 @@
               </div>
             </div>
           </div>
+          </a>
         </div>
-
-        <!-- COLUMNS 2 -->
+        <!-- Card 2 -->
         <div class="item">
+          <a href="services.html#studio-furniture" class="d-block">
           <div class="line-filter-outer bg-cover" style="background-image: url(images/pro2.jpg)">
             <div class="hover-effect-1">
               <div class="hover-effect-content text-center p-3">
@@ -574,10 +508,11 @@
               </div>
             </div>
           </div>
+          </a>
         </div>
-
-        <!-- COLUMNS 3 -->
+        <!-- Card 3 -->
         <div class="item">
+          <a href="services.html#flat-furniture" class="d-block">
           <div class="line-filter-outer bg-cover" style="background-image: url(images/pro3.jpg)">
             <div class="hover-effect-1">
               <div class="hover-effect-content text-center p-3">
@@ -590,10 +525,11 @@
               </div>
             </div>
           </div>
+          </a>
         </div>
-
-        <!-- COLUMNS 4 -->
+        <!-- Card 4 -->
         <div class="item">
+          <a href="services.html#apartment-furniture" class="d-block">
           <div class="line-filter-outer bg-cover" style="background-image: url(images/pro7.jpg)">
             <div class="hover-effect-1">
               <div class="hover-effect-content text-center p-3">
@@ -606,10 +542,11 @@
               </div>
             </div>
           </div>
+          </a>
         </div>
-
-        <!-- COLUMNS 5 -->
+        <!-- Card 5 -->
         <div class="item">
+          <a href="services.html#bungalow-furniture" class="d-block">
           <div class="line-filter-outer bg-cover" style="background-image: url(images/pro8.jpg)">
             <div class="hover-effect-1">
               <div class="hover-effect-content text-center p-3">
@@ -622,10 +559,11 @@
               </div>
             </div>
           </div>
+          </a>
         </div>
-
-        <!-- COLUMNS 6 -->
+        <!-- Card 6 -->
         <div class="item">
+           <a href="services.html#mall-furniture" class="d-block">
           <div class="line-filter-outer bg-cover" style="background-image: url(images/pro9.jpg)">
             <div class="hover-effect-1">
               <div class="hover-effect-content text-center p-3">
@@ -638,6 +576,7 @@
               </div>
             </div>
           </div>
+          </a>
         </div>
 
       </div>
@@ -645,7 +584,7 @@
     <!-- IMAGE CAROUSEL END -->
   </div>
 </div>
-<!-- PROJECT SECTION END -->
+<!-- PROJECT SECTION END --
 
 
         <!-- OUR TEAM START -->
@@ -694,380 +633,255 @@
        
 
        
+<!-- OUR WORK CONTENT START -->
+<div class="section-full   p-t80 p-b50 bg-white">
+  <div class="container">
+    <!-- TITLE START -->
+    <div class="section-head text-center">
+      <div class="wt-separator-outer separator-center">
+        <div class="wt-separator">
+          <span class="site-text-primary text-uppercase sep-line-one">
+            Our Work gallery
+          </span>
+        </div>
+      </div>
+      <h2>Our Work</h2>
+    </div>
+    <!-- TITLE END -->
 
-        <!-- OUR WORK CONTENT START -->
-        <div class="section-full small-device p-t80 p-b50 bg-gray">
-          <div class="container">
-            <!-- TITLE START -->
-            <div class="section-head text-center">
-              <div class="wt-separator-outer separator-center">
-                <div class="wt-separator">
-                  <span class="site-text-primary text-uppercase sep-line-one"
-                    >Our Work gallery</span
-                  >
-                </div>
-              </div>
-              <h2>Our Work</h2>
-            </div>
-            <!-- TITLE END -->
+    <!-- GALLERY CONTENT START -->
+    <!-- <div class="portfolio-wrap mfp-gallery work-grid row"> -->
+      <!-- FILTER BOX -->
+      <!-- <div class="stamp masonry-item col-lg-4 col-md-6 m-b40"> -->
+        <div class="stamp-secion-2">
+          <h4 class="wt-tilte m-t0 text-center">
+            We create Innovative design. exceptional designing for exceptional Spaces.
+          </h4>
+          </div>
+      <!-- </div> -->
+          <!-- FILTER BOX (separate, full width) -->
+  <div class="filter-wrap text-center  mb-4 p-b10">
+    <ul class="filter-navigation masonry-filter text-uppercase list-inline d-flex justify-content-center flex-wrap gap-2">
+      <li class="list-inline-item active"><a data-filter="*" data-hover="All" href="#">All</a></li>
+      <li class="list-inline-item"><a data-filter=".cat-1" data-hover="Office" href="#">Office</a></li>
+      <li class="list-inline-item"><a data-filter=".cat-3" data-hover="Flat" href="#">Flat</a></li>
+      <li class="list-inline-item"><a data-filter=".cat-2" data-hover="Bungalow" href="#">Bungalow</a></li>
+      <li class="list-inline-item"><a data-filter=".cat-5" data-hover="Studio" href="#">Studio</a></li>
+      <li class="list-inline-item"><a data-filter=".cat-6" data-hover="Apartment" href="#">Apartment</a></li>
+      <li class="list-inline-item"><a data-filter=".cat-7" data-hover="Mall" href="#">Mall</a></li>
+    </ul>
+  </div>
+        </div>
+      </div>
 
-            <!-- GALLERY CONTENT START -->
-            <div class="portfolio-wrap mfp-gallery work-grid row">
-              <!-- COLUMNS 1 -->
-              <div class="stamp masonry-item col-lg-4 col-md-6 m-b40">
-                <div class="bg-white p-a30 p-b20 stamp-secion-2">
-                  <h4 class="wt-tilte m-t0">
-                    We create Innovative design. exceptional designing for exceptional Spaces.
-                  </h4>
-                  
-                  <!-- <p>
-                   We create Innovative design. exceptional designing for exceptional Spaces
-                  </p> -->
-                  <div class="filter-wrap">
-                    <ul class="filter-navigation masonry-filter text-uppercase">
-                      <li class="active">
-                        <a data-filter="*" data-hover="All" href="#">All</a>
-                      </li>
-                      <li>
-                        <a
-                          data-filter=".cat-1"
-                          data-hover="Office"
-                          href="javascript:;"
-                          >Office</a
-                        >
-                      </li>
-                      <li>
-                        <a
-                          data-filter=".cat-3"
-                          data-hover="Flat"
-                          href="javascript:;"
-                          > Flat</a
-                        >
-                      </li>
-                      <li>
-                        <a
-                          data-filter=".cat-2"
-                          data-hover="Bungalow"
-                          href="javascript:;"
-                          >Bungalow</a
-                        >
-                      </li>
-                      <li>
-                        <a
-                          data-filter=".cat-5"
-                          data-hover="Studio"
-                          href="javascript:;"
-                          >Studio</a
-                        >
-                      </li>
-                      <li>
-                        <a
-                          data-filter=".cat-6"
-                          data-hover="Apartment"
-                          href="javascript:;"
-                          >Apartment
-                        </a>
-                      </li>
-                       <li>
-                        <a
-                          data-filter=".cat-7"
-                          data-hover="Mall"
-                          href="javascript:;"
-                          >Mall
-                        </a>
-                      </li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
-
-              <!-- COLUMNS 2 -->
-              <div class="masonry-item cat-1 col-lg-4 col-md-6 m-b30">
-                <div class="wt-box work-hover-content">
-                  <div class="wt-thum-bx img-center-icon">
-                    <a href="post-right-sidebar.html"
-                      ><img src="images/pro1.jpg" alt=""
-                    /></a>
-                  </div>
-                  <div class="wt-info p-t20">
-                    <h4 class="wt-tilte m-b10 m-t0">
-                     
-                    </h4>
-                    
-                  </div>
-                </div>
-              </div>
-
-              <!-- COLUMNS 3 -->
-              <div class="masonry-item cat-6 col-lg-4 col-md-6 m-b30">
-                <div class="wt-box work-hover-content">
-                  <div class="wt-thum-bx img-center-icon">
-                    <a href="post-right-sidebar.html"
-                      ><img src="images/pro2.jpg" alt=""
-                    /></a>
-                  </div>
-                  <div class="wt-info p-t20">
-                    <h4 class="wt-tilte m-b10 m-t0">
-                      
-                    </h4>
-                    
-                  </div>
-                </div>
-              </div>
-
-              <!-- COLUMNS 4 -->
-              <div class="masonry-item cat-6 col-lg-4 col-md-6 m-b30">
-                <div class="wt-box work-hover-content">
-                  <div class="wt-thum-bx img-center-icon">
-                    <a href="post-right-sidebar.html"
-                      ><img src="images/pro3.jpg" alt=""
-                    /></a>
-                  </div>
-                  <div class="wt-info p-t20">
-                    <h4 class="wt-tilte m-b10 m-t0">
-                   
-                    </h4>
-                    <p class="m-b0"<Aqaba, Jordan</p>
-                  </div>
-                </div>
-              </div>
-
-              <!-- COLUMNS 5 -->
-              <div class="masonry-item cat-3 col-lg-4 col-md-6 m-b30">
-                <div class="wt-box work-hover-content">
-                  <div class="wt-thum-bx img-center-icon">
-                    <a href="post-right-sidebar.html"
-                      ><img src="images/pro4.jpg" alt=""
-                    /></a>
-                  </div>
-                  <div class="wt-info p-t20">
-                    <h4 class="wt-tilte m-b10 m-t0">
-                      
-                    </h4>
-                    
-                  </div>
-                </div>
-              </div>
-
-              <!-- COLUMNS 6 -->
-              <div class="masonry-item cat-6 col-lg-4 col-md-6 m-b30">
-                <div class="wt-box work-hover-content">
-                  <div class="wt-thum-bx img-center-icon">
-                    <a href="post-right-sidebar.html"
-                      ><img src="images/pro5.jpg" alt=""
-                    /></a>
-                  </div>
-                  <div class="wt-info p-t20">
-                    <h4 class="wt-tilte m-b10 m-t0">
-                      
-                    </h4>
-                    
-                  </div>
-                </div>
-              </div>
-
-              <!-- COLUMNS 7 -->
-              <div class="masonry-item cat-3 col-lg-4 col-md-6 m-b30">
-                <div class="wt-box work-hover-content">
-                  <div class="wt-thum-bx img-center-icon">
-                    <a href="post-right-sidebar.html"
-                      ><img src="images/pro8.jpg" alt=""
-
-                    /></a>
-                  </div>
-                  <div class="wt-info p-t20">
-                    <h4 class="wt-tilte m-b10 m-t0">
-                     
-                    </h4>
-                    
-                  </div>
-                </div>
-              </div>
-              
-
-              <!-- COLUMNS 8 -->
-              <div class="masonry-item cat-3 col-lg-4 col-md-6 m-b30">
-                <div class="wt-box work-hover-content">
-                  <div class="wt-thum-bx img-center-icon">
-                    <a href="post-right-sidebar.html"
-                      ><img src="images/pro7.jpg" alt=""
-                    /></a>
-                  </div>
-                  <div class="wt-info p-t20">
-                    <h4 class="wt-tilte m-b10 m-t0">
-                      
-                    </h4>
-                    <div>
-                </div>
-              </div>
-
-              <!-- COLUMNS 9 -->
-              <div class="masonry-item cat-4 col-lg-4 col-md-6 m-b30">
-                <div class="wt-box work-hover-content">
-                  <div class="wt-thum-bx img-center-icon">
-                    <a href="post-right-sidebar.html"
-                      >
-                      <img src="images/pro9.jpg" alt=""
-                    /></a>
-                  </div>
-                  <div class="wt-info p-t20">
-                    <h4 class="wt-tilte m-b10 m-t0">
-                     
-                    </h4>
-                    
-                  </div>
-                </div>
-              </div>
-            </div>
-            <!-- GALLERY CONTENT END -->
+      <!-- IMAGES -->
+       
+       <div class="portfolio-wrap  mfp-gallery work-grid row p-b70">
+      <div class="masonry-item cat-1 item col-lg-4 col-md-6 m-b30">
+        <div class="wt-box work-hover-content">
+          <div class="wt-thum-bx img-center-icon">
+            <a href="images/pro1.jpg" class="mfp-link">
+              <img src="images/pro1.jpg" alt="Office" />
+            </a>
           </div>
         </div>
-        <!-- OUR WORK CONTENT END  -->
+      </div>
 
-        <!-- TESTIMONIAL SECTION START -->
-       <!-- TESTIMONIAL SECTION START -->
-<div class="section-full small-device p-t80 p-b50 bg-white bg-repeat" style="background-image:url(images/background/ptn-1.png)">
-    <div class="container">
-        <div class="section-content">
-
-            <!-- Heading -->
-            <div class="section-head text-center m-b30">
-                <h2 class="text-black">Testimonials</h2>
-            </div>
-            <!-- Heading End -->
-
-            <div class="row">
-                <div class="col-lg-7 col-md-12 m-b30">
-                    <div class="owl-carousel testimonial-home owl-btn-top-right">
-                        <!-- Testimonial Item 1 -->
-                        <div class="item">
-                            <div class="testimonial-5">
-                                <div class="testimonial-text">
-                                    <div class="testimonial-paragraph">
-                                        <p class="text-black">Our office looks completely different.</p>
-                                        <span class="fa fa-quote-left site-text-primary"></span>
-                                        <p>The team listened to our ideas and gave us practical, stylish furniture. Every piece fits perfectly, and the space feels more open now.</p>
-                                    </div>
-                                </div>
-                                <div class="clearfix">
-                                    <div class="testimonial-detail clearfix">
-                                        <strong class="testimonial-name text-black">Sneha Iyer</strong>
-                                    </div>                                            
-                                    <div class="testimonial-pic-block"> 
-                                        <div class="testimonial-pic">
-                                            <i class="fas fa-star" style="font-size: 15px; color: gold;"></i>
-                                            <i class="fas fa-star" style="font-size: 15px; color: gold;"></i>
-                                            <i class="fas fa-star" style="font-size: 15px; color: gold;"></i>
-                                            <i class="fas fa-star" style="font-size: 15px; color: gold;"></i>
-                                            <i class="fas fa-star" style="font-size: 15px; color: gold;"></i>
-                                        </div>
-                                    </div>
-                                </div>                                            
-                            </div>
-                        </div>
-                        
-                         <div class="item">
-                            <div class="testimonial-5">
-                                <div class="testimonial-text">
-                                    <div class="testimonial-paragraph">
-                                        <p class="text-black">Great designs for small spaces.</p>
-                                        <span class="fa fa-quote-left site-text-primary"></span>
-                                        <p>                              My studio apartment feels spacious and stylish
-                              after their makeover. The furniture is compact yet
-                              functional. Excellent use of every corner without
-                              compromising beauty.
-</p>
-                                    </div>
-                                </div>
-                                <div class="clearfix">
-                                    <div class="testimonial-detail clearfix">
-                                        <strong class="testimonial-name text-black">Karan Desai</strong>
-                                    </div>                                            
-                                    <div class="testimonial-pic-block"> 
-                                        <div class="testimonial-pic">
-                                            <i class="fas fa-star" style="font-size: 15px; color: gold;"></i>
-                                            <i class="fas fa-star" style="font-size: 15px; color: gold;"></i>
-                                            <i class="fas fa-star" style="font-size: 15px; color: gold;"></i>
-                                            <i class="fas fa-star" style="font-size: 15px; color: gold;"></i>
-                                            <i class="fas fa-star-half" style="font-size: 15px; color: gold;"></i>
-                                        </div>
-                                    </div>
-                                </div>                                            
-                            </div>
-                        </div>
-
-                        <div class="item">
-                            <div class="testimonial-5">
-                                <div class="testimonial-text">
-                                    <div class="testimonial-paragraph">
-                                        <p class="text-black">Exactly what we needed for our flat</p>
-                                        <span class="fa fa-quote-left site-text-primary"></span>
-                                        <p>The team transformed our flat with smart furniture choices that perfectly fit the space. 
-                   It feels cozy yet spacious, and we couldn’t be happier with the result.</p>
-                                    </div>
-                                </div>
-                                <div class="clearfix">
-                                    <div class="testimonial-detail clearfix">
-                                        <strong class="testimonial-name text-black">Rohan Verma</strong>
-                                    </div>                                            
-                                    <div class="testimonial-pic-block"> 
-                                        <div class="testimonial-pic">
-                                            <i class="fas fa-star" style="font-size: 15px; color: gold;"></i>
-                                            <i class="fas fa-star" style="font-size: 15px; color: gold;"></i>
-                                            <i class="fas fa-star" style="font-size: 15px; color: gold;"></i>
-                                            <i class="fas fa-star" style="font-size: 15px; color: gold;"></i>
-                                            
-                                        </div>
-                                    </div>
-                                </div>                                            
-                            </div>
-                        </div>
-
-                        <div class="item">
-                            <div class="testimonial-5">
-                                <div class="testimonial-text">
-                                    <div class="testimonial-paragraph">
-                                        <p class="text-black">Our office looks completely different.</p>
-                                        <span class="fa fa-quote-left site-text-primary"></span>
-                                        <p>The team listened to our ideas and gave us practical, stylish furniture. Every piece fits perfectly, and the space feels more open now.</p>
-                                    </div>
-                                </div>
-                                <div class="clearfix">
-                                    <div class="testimonial-detail clearfix">
-                                        <strong class="testimonial-name text-black">Sneha Iyer</strong>
-                                    </div>                                            
-                                    <div class="testimonial-pic-block"> 
-                                        <div class="testimonial-pic">
-                                            <i class="fas fa-star" style="font-size: 15px; color: gold;"></i>
-                                            <i class="fas fa-star" style="font-size: 15px; color: gold;"></i>
-                                            <i class="fas fa-star" style="font-size: 15px; color: gold;"></i>
-                                            <i class="fas fa-star" style="font-size: 15px; color: gold;"></i>
-                                            <i class="fas fa-star" style="font-size: 15px; color: gold;"></i>
-                                        </div>
-                                    </div>
-                                </div>                                            
-                            </div>
-                        </div>
-
-                    </div>
-                </div>
-
-                <div class="col-lg-5 col-md-12 m-b30">
-                    <div class="counter-section-one">
-                        <div class="counter-sec-top">
-                            <div class="p-a20 text-black wt-icon-box-wraper center"></div>                                    
-                        </div>
-                        <div class="counter-sec-bottom">
-                            <div class="p-a20 text-black wt-icon-box-wraper center"></div>                                    
-                        </div>                                    
-                    </div>
-                </div>
-            </div> 
+      <div class="masonry-item cat-6 item col-lg-4 col-md-6 m-b30">
+        <div class="wt-box work-hover-content">
+          <div class="wt-thum-bx img-center-icon">
+            <a href="images/pro2.jpg" class="mfp-link">
+              <img src="images/pro2.jpg" alt="Apartment" />
+            </a>
+          </div>
         </div>
+      </div>
+
+      <div class="masonry-item cat-6 item col-lg-4 col-md-6 m-b30">
+        <div class="wt-box work-hover-content">
+          <div class="wt-thum-bx img-center-icon">
+            <a href="images/pro3.jpg" class="mfp-link">
+              <img src="images/pro3.jpg" alt="Apartment" />
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="masonry-item cat-3 item col-lg-4 col-md-6 m-b30">
+        <div class="wt-box work-hover-content">
+          <div class="wt-thum-bx img-center-icon">
+            <a href="images/pro4.jpg" class="mfp-link">
+              <img src="images/pro4.jpg" alt="Flat" />
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="masonry-item cat-6 item col-lg-4 col-md-6 m-b30">
+        <div class="wt-box work-hover-content">
+          <div class="wt-thum-bx img-center-icon">
+            <a href="images/pro5.jpg" class="mfp-link">
+              <img src="images/pro5.jpg" alt="Apartment" />
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="masonry-item cat-3 item col-lg-4 col-md-6 m-b30">
+        <div class="wt-box work-hover-content">
+          <div class="wt-thum-bx img-center-icon">
+            <a href="images/pro8.jpg" class="mfp-link">
+              <img src="images/pro8.jpg" alt="Flat" />
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="masonry-item cat-3 item col-lg-4 col-md-6 m-b30">
+        <div class="wt-box work-hover-content">
+          <div class="wt-thum-bx img-center-icon">
+            <a href="images/pro7.jpg" class="mfp-link">
+              <img src="images/pro7.jpg" alt="Flat" />
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="masonry-item cat-4 item col-lg-4 col-md-6 m-b30">
+        <div class="wt-box work-hover-content">
+          <div class="wt-thum-bx img-center-icon">
+            <a href="images/pro9.jpg" class="mfp-link">
+              <img src="images/pro9.jpg" alt="Studio" />
+            </a>
+          </div>
+        </div>
+      </div>
+
     </div>
+    <!-- GALLERY CONTENT END -->
+  </div>
+</div>
+<!-- OUR WORK CONTENT END -->
+
+
+<!-- TESTIMONIAL SECTION START -->
+<div class="section-full small-device p-t80 p-b80 testimonial-section"
+     style="background-color:#ffffff; background-image:url('images/background/ptn-1.png'); background-size:auto; background-repeat:repeat; background-position:center;">
+  <div class="container">
+    <div class="section-content">
+
+      <!-- Heading -->
+      <div class="section-head text-center m-b30">
+        <h2 class="text-black">Testimonials</h2>
+      </div>
+      <!-- Heading End -->
+
+      <div class="row">
+        <div class="col-lg-7 col-md-12 m-b30">
+          <!-- Owl Carousel -->
+          <div class="owl-carousel testimonial-home owl-btn-top-right owl-dots-bottom-center">
+
+            <!-- Testimonial Item 1 -->
+            <div class="item">
+              <div class="testimonial-5">
+                <div class="testimonial-text">
+                  <div class="testimonial-paragraph">
+                    <p class="text-black">Our office looks completely different.</p>
+                    <span class="fa fa-quote-left site-text-primary"></span>
+                    <p>The team listened to our ideas and gave us practical, stylish furniture. Every piece fits perfectly, and the space feels more open now.</p>
+                  </div>
+                </div>
+                <div class="clearfix">
+                  <div class="testimonial-detail clearfix">
+                    <strong class="testimonial-name text-black">Sneha Iyer</strong>
+                  </div>                                            
+                  <div class="testimonial-pic-block"> 
+                    <div class="testimonial-pic">
+                      <i class="fas fa-star" style="color: gold;"></i>
+                      <i class="fas fa-star" style="color: gold;"></i>
+                      <i class="fas fa-star" style="color: gold;"></i>
+                      <i class="fas fa-star" style="color: gold;"></i>
+                      <i class="fas fa-star" style="color: gold;"></i>
+                    </div>
+                  </div>
+                </div>                                            
+              </div>
+            </div>
+
+            <!-- Testimonial Item 2 -->
+            <div class="item">
+              <div class="testimonial-5">
+                <div class="testimonial-text">
+                  <div class="testimonial-paragraph">
+                    <p class="text-black">Great designs for small spaces.</p>
+                    <span class="fa fa-quote-left site-text-primary"></span>
+                    <p>My studio apartment feels spacious and stylish after their makeover. Compact yet functional furniture, every corner used beautifully.</p>
+                  </div>
+                </div>
+                <div class="clearfix">
+                  <div class="testimonial-detail clearfix">
+                    <strong class="testimonial-name text-black">Karan Desai</strong>
+                  </div>                                            
+                  <div class="testimonial-pic-block"> 
+                    <div class="testimonial-pic">
+                      <i class="fas fa-star" style="color: gold;"></i>
+                      <i class="fas fa-star" style="color: gold;"></i>
+                      <i class="fas fa-star" style="color: gold;"></i>
+                      <i class="fas fa-star" style="color: gold;"></i>
+                      <i class="fas fa-star-half" style="color: gold;"></i>
+                    </div>
+                  </div>
+                </div>                                            
+              </div>
+            </div>
+
+            <!-- Testimonial Item 3 -->
+            <div class="item">
+              <div class="testimonial-5">
+                <div class="testimonial-text">
+                  <div class="testimonial-paragraph">
+                    <p class="text-black">Exactly what we needed for our flat</p>
+                    <span class="fa fa-quote-left site-text-primary"></span>
+                    <p>The team transformed our flat with smart furniture choices. It feels cozy yet spacious, and we couldn’t be happier with the result.</p>
+                  </div>
+                </div>
+                <div class="clearfix">
+                  <div class="testimonial-detail clearfix">
+                    <strong class="testimonial-name text-black">Rohan Verma</strong>
+                  </div>                                            
+                  <div class="testimonial-pic-block"> 
+                    <div class="testimonial-pic">
+                      <i class="fas fa-star" style="color: gold;"></i>
+                      <i class="fas fa-star" style="color: gold;"></i>
+                      <i class="fas fa-star" style="color: gold;"></i>
+                      <i class="fas fa-star" style="color: gold;"></i>
+                    </div>
+                  </div>
+                </div>                                            
+              </div>
+            </div>
+
+          </div>
+          <!-- Owl Carousel End -->
+        </div>
+
+        <div class="col-lg-5 col-md-12 m-b30">
+          <div class="counter-section-one">
+            <div class="counter-sec-top">
+              <div class="p-a20 text-black wt-icon-box-wraper center"></div>                                    
+            </div>
+            <div class="counter-sec-bottom">
+              <div class="p-a20 text-black wt-icon-box-wraper center"></div>                                    
+            </div>                                    
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>  
- 
-<!-- TESTIMONIAL SECTION END -->  
+<!-- TESTIMONIAL SECTION END -->
+
+
 
         <!-- CONTENT END -->
         
@@ -1167,74 +981,116 @@
     </div>
     <!-- LOADING AREA  END ====== -->
 
-    <!-- JAVASCRIPT  FILES ========================================= -->
-    <script src="js/jquery-3.7.1.min.js"></script>
-    <!-- JQUERY.MIN JS -->
-    <script src="js/bootstrap.min.js"></script>
-    <!-- BOOTSTRAP.MIN JS -->
-    <script src="js/magnific-popup.min.js"></script>
-    <!-- MAGNIFIC-POPUP JS -->
-    <script src="js/waypoints.min.js"></script>
-    <!-- WAYPOINTS JS -->
-    <script src="js/counterup.min.js"></script>
-    <!-- COUNTERUP JS -->
-    <script src="js/waypoints-sticky.min.js"></script>
-    <!-- COUNTERUP JS -->
-    <script src="js/imagesloaded.pkgd.min.js"></script>
-    <!-- MASONRY  -->
-    <script src="js/isotope.pkgd.min.js"></script>
-    <!-- MASONRY  -->
-    <script src="js/owl.carousel.min.js"></script>
-    <!-- OWL  SLIDER  -->
-    <script src="js/jquery.owl-filter.js"></script>
-    <script src="js/custom.js"></script>
-    <!-- CUSTOM FUCTIONS  -->
-    <script src="js/shortcode.js"></script>
-    <!-- SHORTCODE FUCTIONS  -->
-  
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <!-- JAVASCRIPT FILES ========================================= -->
+<!-- jQuery and Bootstrap (make sure jQuery loads first) -->
+<script src="js/jquery-3.7.1.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
 
-    <!-- Owl Carousel JS -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+<!-- Plugins -->
+<script src="js/magnific-popup.min.js"></script>
+<script src="js/waypoints.min.js"></script>
+<script src="js/counterup.min.js"></script>
+<script src="js/waypoints-sticky.min.js"></script>
+<script src="js/imagesloaded.pkgd.min.js"></script>
+<script src="js/isotope.pkgd.min.js"></script>
+<script src="js/owl.carousel.min.js"></script>
+<script src="js/custom.js"></script>
+<script src="js/shortcode.js"></script>
 
-    <!-- REVOLUTION JS FILES -->
-    <script src="plugins/revolution/revolution/js/jquery.themepunch.tools.min.js"></script>
-    <script src="plugins/revolution/revolution/js/jquery.themepunch.revolution.min.js"></script>
-
-     <script>
-    $(document).ready(function(){
-      $(".testimonial-home").owlCarousel({
-        items: 1,
-        loop: true,
-        autoplay: true,
-        autoplayTimeout: 3000,
-        autoplayHoverPause: true,
-        nav: false,
-        dots: false
-      });
-    });
-    </script>
-
-    <!-- SLIDER REVOLUTION 5.0 EXTENSIONS  (Load Extensions only on Local File Systems !  The following part can be removed on Server for On Demand Loading) -->
-    <script src="plugins/revolution/revolution/js/extensions/revolution-plugin.js"></script>
-
-    <!-- REVOLUTION SLIDER SCRIPT FILES -->
-    <script src="js/rev-script-1.js"></script>
-
-    <script>
-  document.getElementById("mobile-toggle").addEventListener("click", function() {
-    document.querySelector(".header-nav").classList.toggle("open");
+<!-- Init Magnific Popup -->
+<script>
+$(document).ready(function () {
+  $('.mfp-gallery').magnificPopup({
+    delegate: 'a.mfp-link',
+    type: 'image',
+    gallery: { enabled: true },
+    image: { titleSrc: () => '' }
   });
+});
 </script>
-    
-      <!-- Floating whatsapp-icon -->
-    <a href="https://wa.me/917506183544" target="_blank" id="whatsapp-float">
-   <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" 
-     alt="WhatsApp" style="width:50px;height:50px;">
-</a>
 
-<!-- Inline CSS for positioning -->
+<!-- Init Carousels -->
+<script>
+$(document).ready(function () {
+  $(".testimonial-home").owlCarousel({
+    items: 1,
+    loop: true,
+    autoplay: true,
+    autoplayTimeout: 2000,
+    autoplayHoverPause: true,
+    nav: true,
+    dots: true,
+    smartSpeed: 800,
+    navText: [
+      '<i class="fa fa-chevron-left"></i>',
+      '<i class="fa fa-chevron-right"></i>'
+    ]
+  });
+
+  $(".owl-carousel-filter3").owlCarousel({
+    loop: true,
+    margin: 30,
+    nav: true,
+    dots: true,
+    autoplay: true,
+    autoplayTimeout: 2000,
+    autoplayHoverPause: true,
+    smartSpeed: 800,
+    responsive: {
+      0: { items: 1 },
+      576: { items: 1 },
+      768: { items: 2 },
+      992: { items: 3 },
+      1200: { items: 3 }
+    },
+    navText: [
+      '<i class="fa fa-chevron-left"></i>',
+      '<i class="fa fa-chevron-right"></i>'
+    ]
+  });
+});
+</script>
+
+<!-- Init Isotope Filter -->
+<script>
+$(document).ready(function () {
+  var $grid = $('.portfolio-wrap').isotope({
+    itemSelector: '.masonry-item',
+    layoutMode: 'fitRows'
+  });
+
+  $('.filter-navigation a').on('click', function (e) {
+    e.preventDefault();
+    var filterValue = $(this).attr('data-filter');
+    $grid.isotope({ filter: filterValue });
+
+    $('.filter-navigation li').removeClass('active');
+    $(this).parent().addClass('active');
+  });
+});
+</script>
+
+<!-- Optional CSS for navigation & dots -->
 <style>
+.owl-carousel .owl-nav { display: block !important; }
+.owl-carousel .owl-nav button {
+  background: transparent;
+  border: none;
+  font-size: 20px;
+  color: #333;
+}
+.owl-carousel .owl-dots {
+  margin-top: 15px;
+  text-align: center;
+}
+.testimonial-home .owl-dots {
+  position: relative !important;
+  bottom: auto !important;
+  margin-top: 20px !important;
+  text-align: center !important;
+}
+
+/* Floating WhatsApp button */
 #whatsapp-float {
     position: fixed;
     width: 50px;
@@ -1244,5 +1100,12 @@
     z-index: 999;
 }
 </style>
+
+<!-- Floating WhatsApp Icon -->
+<a href="https://wa.me/917506183544" target="_blank" id="whatsapp-float">
+  <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" 
+       alt="WhatsApp" style="width:50px;height:50px;">
+</a>
+
   </body>
 </html>

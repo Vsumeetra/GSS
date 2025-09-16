@@ -4493,7 +4493,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00000000', e
 	1. header full screen
 -------------------------------------*/ 
 .nav-wide .container {width:100%; max-width: 100%;}
-.nav-wide .container{padding: 0px 0px 0px 15px;}
+.nav-wide .container{padding: 0px 25px 0px 15px;}
 .nav-full-banner .container{
 	max-width:1440px;
 	width:100%;

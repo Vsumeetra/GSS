@@ -30,6 +30,10 @@
     <link rel="stylesheet" href="css/flaticon.min.css"><!-- FLATICON STYLE SHEET -->
     <link rel="stylesheet" href="css/skin/skin-1.css" class="skin"><!-- THEME COLOR CHANGE STYLE SHEET -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link
+  href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.4/css/lightbox.min.css"
+  rel="stylesheet"
+/>
 
        <!-- Font Awesome 5 CDN -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
@@ -146,24 +150,17 @@
                 <a href="contact-1.html">Contact us</a>
               </li>
             </ul>
-            <div class="contact-icons d-lg-none d-flex justify-content-center mt-3">
-              <a href="tel:+918451953292" class="contact-icon me-3" title="Call Now">
-                <i class="fa fa-phone"></i>
-              </a>
-             <a href="https://wa.me/917506183544" target="_blank" class="contact-icon" title="Chat on WhatsApp">
- <i class="fab fa-whatsapp"></i>
-</a>
-            </div>
+            
           </div>
         </div>
 
-        <div class="contact-icons d-none d-lg-flex align-items-center">
+        <div class="contact-icons d-none d-lg-flex align-items-center ">
           <a href="tel:+918451953292" class="contact-icon me-3" title="Call Now">
-            <i class="fa fa-phone"></i>
+            <i class="fa fa-phone"style="color: inherit;"></i>
           </a>
           <a href="https://wa.me/917506183544" target="_blank" class="contact-icon" title="Chat on WhatsApp">
-            <i class="fab fa-whatsapp"></i>
-          </a>
+  <i class="fab fa-whatsapp"style="color: #25D366;"></i>
+</a>
         </div>
       </div>
     </div>
@@ -199,24 +196,8 @@
             <!-- INNER PAGE BANNER END -->
             
 			<!-- SECTION CONTENT START -->
-            <div class="section-full small-device  p-t80 p-b50 bg-gray">
-            	<div class="container">
-                    <!-- PAGINATION START -->
-                    <!-- <div class="filter-wrap p-b30 text-center">
-                        <ul class="filter-navigation masonry-filter text-uppercase">
-                            <li class="active"><a data-filter="*" data-hover="All" href="#">All</a></li>
-                            <li><a data-filter=".cat-1" data-hover="Bathroom" href="javascript:;">Bathroom</a></li>
-                            <li><a data-filter=".cat-4" data-hover="Spa" href="javascript:;">Spa</a></li>
-                            <li><a data-filter=".cat-2" data-hover="Furniture" href="javascript:;">Furniture</a></li>
-                            <li><a data-filter=".cat-3" data-hover="Decor" href="javascript:;">Decor</a></li>
-                            <li><a data-filter=".cat-5" data-hover="Building" href="javascript:;">Building</a></li>
-                            <li><a data-filter=".cat-6" data-hover="Living" href="javascript:;">Living </a></li>
-                        </ul>
-                    </div> -->
-                    <!-- PAGINATION END -->
-                    <!-- GALLERY CONTENT START -->
-                    <!-- OUR FEATURED GALLERY SECTION -->
-<div class="section-full p-t50 p-b50">
+<!-- GALLERY SECTION -->
+<div class="section-full p-t70 p-b70">
   <div class="container">
     <!-- Section Heading -->
     <div class="section-head text-center">
@@ -245,70 +226,91 @@
     <div class="gallery-grid row">
       <!-- Office -->
       <div class="col-lg-4 col-md-6 m-b30 item office">
-        <div class="wt-box">
-          <img src="images/pro1.jpg" alt="Office" class="img-fluid" />
+        <div class="card">
+          <a href="images/pro1.jpg" data-lightbox="portfolio" data-title="Office">
+            <img src="images/pro1.jpg" alt="Office" class="card-img-top" />
+          </a>
         </div>
       </div>
 
       <!-- Flat -->
       <div class="col-lg-4 col-md-6 m-b30 item flat">
-  <div class="wt-box">
-    <img src="images/pro2.jpg" alt="Flat" class="img-fluid" />
-  </div>
-</div>
+        <div class="card">
+          <a href="images/pro2.jpg" data-lightbox="portfolio" data-title="Flat">
+            <img src="images/pro2.jpg" alt="Flat" class="card-img-top" />
+          </a>
+        </div>
+      </div>
+
       <!-- Bungalow -->
       <div class="col-lg-4 col-md-6 m-b30 item bungalow">
-        <div class="wt-box">
-          <img src="images/about-pic1.jpg" alt="Bungalow" class="img-fluid" />
+        <div class="card">
+          <a href="images/about-pic1.jpg" data-lightbox="portfolio" data-title="Bungalow">
+            <img src="images/about-pic1.jpg" alt="Bungalow" class="card-img-top" />
+          </a>
         </div>
       </div>
 
       <!-- Studio -->
       <div class="col-lg-4 col-md-6 m-b30 item studio">
-        <div class="wt-box">
-          <img src="images/pro3.jpg" alt="Studio" class="img-fluid" />
+        <div class="card">
+          <a href="images/pro3.jpg" data-lightbox="portfolio" data-title="Studio">
+            <img src="images/pro3.jpg" alt="Studio" class="card-img-top" />
+          </a>
         </div>
       </div>
 
       <!-- Apartment -->
       <div class="col-lg-4 col-md-6 m-b30 item apartment">
-        <div class="wt-box">
-          <img src="images/pro4.jpg" alt="Apartment" class="img-fluid" />
+        <div class="card">
+          <a href="images/pro4.jpg" data-lightbox="portfolio" data-title="Apartment">
+            <img src="images/pro4.jpg" alt="Apartment" class="card-img-top" />
+          </a>
         </div>
       </div>
 
       <!-- Mall -->
       <div class="col-lg-4 col-md-6 m-b30 item mall">
-        <div class="wt-box">
-          <img src="images/pro5.jpg" alt="Mall" class="img-fluid" />
+        <div class="card">
+          <a href="images/pro5.jpg" data-lightbox="portfolio" data-title="Mall">
+            <img src="images/pro5.jpg" alt="Mall" class="card-img-top" />
+          </a>
         </div>
       </div>
 
       <!-- Extra Bungalow -->
       <div class="col-lg-4 col-md-6 m-b30 item bungalow">
-        <div class="wt-box">
-          <img src="images/about-pic5.jpg" alt="Bungalow" class="img-fluid" />
+        <div class="card">
+          <a href="images/about-pic5.jpg" data-lightbox="portfolio" data-title="Bungalow">
+            <img src="images/about-pic5.jpg" alt="Bungalow" class="card-img-top" />
+          </a>
         </div>
       </div>
 
       <!-- Extra Flat -->
       <div class="col-lg-4 col-md-6 m-b30 item flat">
-        <div class="wt-box">
-          <img src="images/pro8.jpg" alt="Flat" class="img-fluid" />
+        <div class="card">
+          <a href="images/pro8.jpg" data-lightbox="portfolio" data-title="Flat">
+            <img src="images/pro8.jpg" alt="Flat" class="card-img-top" />
+          </a>
         </div>
       </div>
 
       <!-- Extra Office -->
       <div class="col-lg-4 col-md-6 m-b30 item office">
-        <div class="wt-box">
-          <img src="images/pro9.jpg" alt="Office" class="img-fluid" />
+        <div class="card">
+          <a href="images/pro9.jpg" data-lightbox="portfolio" data-title="Office">
+            <img src="images/pro9.jpg" alt="Office" class="card-img-top" />
+          </a>
         </div>
       </div>
     </div>
   </div>
 </div>
 <!-- SECTION CONTENT END -->
-              </div>
+
+
+
         <!-- CONTENT END -->
         
         <!-- FOOTER START -->
@@ -454,6 +456,21 @@
 <script  src="js/jquery.owl-filter.js"></script>
 <script  src="js/custom.js"></script><!-- CUSTOM FUCTIONS  -->
 <script  src="js/shortcode.js"></script><!-- SHORTCODE FUCTIONS  -->
+<!-- LIGHTBOX2 CSS & JS -->
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.4/js/lightbox.min.js"></script>
+
+<style>
+  .gallery-grid .card {
+    border: none;
+    overflow: hidden;
+  }
+  .gallery-grid img {
+    height: 250px; 
+    object-fit: cover; 
+    width: 100%;
+  }
+</style>
 
   <!-- Floating whatsapp-icon -->
     <a href="https://wa.me/917506183544" target="_blank" id="whatsapp-float">
