@@ -717,32 +717,32 @@ function mobile_side_drawer(){
 ===========================*/
 
 	// > Contact form function by = custom.js	
-	jQuery(document).on('submit', 'form.cons-contact-form', function(e){
-		e.preventDefault();
-		var form = jQuery(this);
+	// jQuery(document).on('submit', 'form.cons-contact-form', function(e){
+	// 	e.preventDefault();
+	// 	var form = jQuery(this);
 		/* sending message */
-		jQuery.ajax({
-			url: 'https://thewebmax.com/intoriza/phpmailer/mail.php',
-			data: form.serialize() + "&action=contactform",
-			type: 'POST',
-			dataType: 'JSON',
-			beforeSend: function() {
-				jQuery('.loading-area').show();
-			},
+		// jQuery.ajax({
+		// 	url: 'https://thewebmax.com/gssinterior/mail.php',
+		// 	data: form.serialize() + "&action=contactform",
+		// 	type: 'POST',
+		// 	dataType: 'JSON',
+		// 	beforeSend: function() {
+		// 		jQuery('.loading-area').show();
+		// 	},
 
-			success:function(data){
-				jQuery('.loading-area').hide();
-				if(data['success']){
-				jQuery("<div class='alert alert-success'>"+data['message']+"</div>").insertBefore('form.cons-contact-form');
-				jQuery('.alert-success').delay(2000).fadeOut(500);
-				}else{
-				jQuery("<div class='alert alert-danger'>"+data['message']+"</div>").insertBefore('form.cons-contact-form');	
-				}
-			}
-		});
+		// 	success:function(data){
+		// 		jQuery('.loading-area').hide();
+		// 		if(data['success']){
+		// 		jQuery("<div class='alert alert-success'>"+data['message']+"</div>").insertBefore('form.cons-contact-form');
+		// 		jQuery('.alert-success').delay(2000).fadeOut(500);
+		// 		}else{
+		// 		jQuery("<div class='alert alert-danger'>"+data['message']+"</div>").insertBefore('form.cons-contact-form');	
+		// 		}
+		// 	}
+		// });
 		//jQuery('.cons-contact-form').trigger("reset");
-		return false;
-	});	
+	// 	return false;
+	// });	
 
 /*===========================
 	Document on  Submit FUNCTION END
